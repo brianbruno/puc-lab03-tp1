@@ -28,6 +28,8 @@ public class App {
     private JButton ordenarPorIDButton;
     private JButton ordenarPorNomeButton;
     private JButton btnEditarCliente;
+    private JLabel txtCPFClie;
+    private JLabel txtCapFinClie;
     public static DefaultListModel clientesList;
 
     private static ListaClientes lista = new ListaClientes();
@@ -70,11 +72,13 @@ public class App {
 
                 String s = (String) listaClientes.getSelectedValue();
                 String codigo = s.substring(0, 10);
-                Cliente cliente = getLista().buscaClienteCodigo(codigo);
+                PessoaFisica cliente = getLista().buscaClienteCodigo(codigo);
                 if(cliente.getCodigo() != null) {
                     txtListClie.setText("Cliente: " + cliente.getCodigo());
                     txtNomeClie.setText("Nome: " + cliente.getNome());
                     txtEndClie.setText("Endereço: " + cliente.getEndereco());
+                    txtCPFClie.setText("CPF: " + cliente.getCPF());
+                    txtCapFinClie.setText("Cap. Financeiro: " + cliente.getCapitalFinanceiro());
                 } else
                     JOptionPane.showMessageDialog(null, "Cliente não encontrado");
             }
@@ -86,11 +90,13 @@ public class App {
             public void actionPerformed(ActionEvent e) {
                 String codigo = txtBuscaClie.getText();
                 if(codigo != "") {
-                    Cliente cliente = getLista().buscaClienteCodigo(codigo);
+                    PessoaFisica cliente = getLista().buscaClienteCodigo(codigo);
                     if(cliente != null) {
                         txtListClie.setText("Cliente: " + cliente.getCodigo());
                         txtNomeClie.setText("Nome: " + cliente.getNome());
                         txtEndClie.setText("Endereço: " + cliente.getEndereco());
+                        txtCPFClie.setText("CPF: " + cliente.getCPF());
+                        txtCapFinClie.setText("Cap. Financeiro: " + cliente.getCapitalFinanceiro());
                     } else
                         JOptionPane.showMessageDialog(null, "Cliente não encontrado");
                 }  else
@@ -104,14 +110,18 @@ public class App {
                 String s = (String) listaClientes.getSelectedValue();
                 if(s != null) {
                     String codigo = s.substring(0, 10);
-                    Cliente cliente = getLista().buscaClienteCodigo(codigo);
-
-
+                    PessoaFisica cliente = getLista().buscaClienteCodigo(codigo);
+                    PessoaFisica clienteAntigo = cliente;
 
                     JTextField nomeField = new JTextField(25);
                     JTextField endeField = new JTextField(25);
                     JTextField cpfField = new JTextField(25);
                     JTextField capfiField = new JTextField(25);
+
+                    nomeField.setText(cliente.getNome());
+                    endeField.setText(cliente.getEndereco());
+                    cpfField.setText(cliente.getCPF());
+                    capfiField.setText(String.valueOf(cliente.getCapitalFinanceiro()));
 
                     Object[] inputFields = {"Nome", nomeField,
                             "Endereço", endeField,
@@ -121,8 +131,19 @@ public class App {
                     int result = JOptionPane.showConfirmDialog(null, inputFields,
                             "Editar Cliente", JOptionPane.OK_CANCEL_OPTION);
                     if (result == JOptionPane.OK_OPTION) {
-                        System.out.println("x value: " + nomeField.getText());
-                        System.out.println("y value: " + endeField.getText());
+                        try {
+                            cliente.setNome(nomeField.getText());
+                            cliente.setEndereco(endeField.getText());
+                            cliente.setCPF(cpfField.getText());
+                            cliente.setCapitalFinanceiro(Float.parseFloat(capfiField.getText()));
+                            if(arquivo.atualizarPF(clienteAntigo, cliente))
+                                JOptionPane.showMessageDialog(null, "Cliente atualizado com sucesso.");
+                            else
+                                JOptionPane.showMessageDialog(null, "Não foi possível atualizar o cliente.");
+                            popularLista();
+                        } catch (Exception erro) {
+                            JOptionPane.showMessageDialog(null, "Verifique se digitou todos os campos corretamente. " + erro);
+                        }
                     }
                 } else
                     JOptionPane.showMessageDialog(null, "Selecione um cliente");
@@ -132,7 +153,7 @@ public class App {
 
     public static void main(String[] args) {
 
-        JFrame janela = new JFrame("SEU");
+        JFrame janela = new JFrame("SEU - Sistema Empresarial Uniformes");
 
         janela.setContentPane(new App().panelMain);
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

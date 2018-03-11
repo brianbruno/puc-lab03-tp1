@@ -21,6 +21,14 @@ public class PessoaFisica extends Cliente {
         return CPF;
     }
 
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
+    }
+
+    public void setCapitalFinanceiro(float capitalFinanceiro) {
+        this.capitalFinanceiro = capitalFinanceiro;
+    }
+
     public float getCapitalFinanceiro() {
         return capitalFinanceiro;
     }

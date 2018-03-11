@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7fa88cdd-9b90-486f-b8a1-7e83a6b17875" name="Default" comment="" />
+    <list default="true" id="7fa88cdd-9b90-486f-b8a1-7e83a6b17875" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/arquivo/Arquivo.class" afterPath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/arquivo/Arquivo.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$1.class" afterPath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$2.class" afterPath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$2.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$3.class" afterPath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$3.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$4.class" afterPath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$4.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App.class" afterPath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/estruturas/PessoaFisica.class" afterPath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/estruturas/PessoaFisica.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/lista/ListaClientes.class" afterPath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/lista/ListaClientes.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/lista/NoCliente.class" afterPath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/lista/NoCliente.class" />
+      <change beforePath="$PROJECT_DIR$/src/arquivo/Arquivo.java" afterPath="$PROJECT_DIR$/src/arquivo/Arquivo.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/seuproject/App.form" afterPath="$PROJECT_DIR$/src/com/seuproject/App.form" />
+      <change beforePath="$PROJECT_DIR$/src/com/seuproject/App.java" afterPath="$PROJECT_DIR$/src/com/seuproject/App.java" />
+      <change beforePath="$PROJECT_DIR$/src/estruturas/PessoaFisica.java" afterPath="$PROJECT_DIR$/src/estruturas/PessoaFisica.java" />
+      <change beforePath="$PROJECT_DIR$/src/lista/ListaClientes.java" afterPath="$PROJECT_DIR$/src/lista/ListaClientes.java" />
+      <change beforePath="$PROJECT_DIR$/src/lista/NoCliente.java" afterPath="$PROJECT_DIR$/src/lista/NoCliente.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,33 +29,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/seuproject/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="124" column="42" lean-forward="true" selection-start-line="124" selection-start-column="42" selection-end-line="124" selection-end-column="42" />
+            <state relative-caret-position="498">
+              <caret line="142" column="43" lean-forward="false" selection-start-line="142" selection-start-column="43" selection-end-line="142" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#1179:1953" expanded="false" />
-                <element signature="e#2023#2758#0" expanded="true" />
-                <element signature="e#2757#2758#0" expanded="true" />
-                <element signature="e#5423#5424#0" expanded="true" />
-                <element signature="e#5451#5452#0" expanded="true" />
+                <element signature="class#1244:2018" expanded="false" />
+                <element signature="e#6935#6936#0" expanded="true" />
+                <element signature="e#6963#6964#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Arquivo.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Arquivo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/arquivo/Arquivo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="123" column="52" lean-forward="false" selection-start-line="123" selection-start-column="52" selection-end-line="123" selection-end-column="52" />
+            <state relative-caret-position="345">
+              <caret line="195" column="0" lean-forward="true" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#gravarPF#0;class#Arquivo#0" expanded="false" />
-                <element signature="method#lerPF#0;class#Arquivo#0" expanded="false" />
+                <element signature="method#ordenarNome#0;class#Arquivo#0" expanded="false" />
+                <element signature="method#fecharManipuladoresEscrita#0;class#Arquivo#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="clientes_temp.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clientes_temp.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -46,13 +71,17 @@
       <file leaf-file-name="PessoaFisica.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/estruturas/PessoaFisica.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+            <state relative-caret-position="476">
+              <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="51" />
               <folding>
                 <element signature="e#592#593#0" expanded="true" />
                 <element signature="e#618#619#0" expanded="true" />
-                <element signature="e#661#662#0" expanded="true" />
-                <element signature="e#701#702#0" expanded="true" />
+                <element signature="e#656#657#0" expanded="true" />
+                <element signature="e#686#687#0" expanded="true" />
+                <element signature="e#751#752#0" expanded="true" />
+                <element signature="e#809#810#0" expanded="true" />
+                <element signature="e#852#853#0" expanded="true" />
+                <element signature="e#892#893#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,11 +90,21 @@
       <file leaf-file-name="ListaClientes.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lista/ListaClientes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-386">
-              <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="26" />
+            <state relative-caret-position="-459">
+              <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Cliente.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/estruturas/Cliente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="549">
+              <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,8 +119,8 @@
       <file leaf-file-name="clientes.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clientes.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="114" lean-forward="true" selection-start-line="0" selection-start-column="114" selection-end-line="0" selection-end-column="114" />
               <folding />
             </state>
           </provider>
@@ -96,6 +135,14 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>FileInputStream</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -108,12 +155,14 @@
         <option value="$PROJECT_DIR$/src/com/seuproject/TabelaClientes.java" />
         <option value="$PROJECT_DIR$/../Aula 01/Exercicio 02/src/Arquivo.java" />
         <option value="$PROJECT_DIR$/src/estruturas/Cliente.java" />
-        <option value="$PROJECT_DIR$/src/estruturas/PessoaFisica.java" />
+        <option value="$PROJECT_DIR$/src/lista/NoCliente.java" />
         <option value="$PROJECT_DIR$/src/lista/ListaClientes.java" />
-        <option value="$PROJECT_DIR$/clientes.json" />
-        <option value="$PROJECT_DIR$/src/arquivo/Arquivo.java" />
+        <option value="$PROJECT_DIR$/src/estruturas/PessoaFisica.java" />
         <option value="$PROJECT_DIR$/src/com/seuproject/App.form" />
         <option value="$PROJECT_DIR$/src/com/seuproject/App.java" />
+        <option value="$PROJECT_DIR$/clientes.json" />
+        <option value="$PROJECT_DIR$/clientes_temp.json" />
+        <option value="$PROJECT_DIR$/src/arquivo/Arquivo.java" />
       </list>
     </option>
   </component>
@@ -149,42 +198,49 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Trabalho Prático 01 - GUI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Trabalho Prático 01 - GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="puc-lab03-tp1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="puc-lab03-tp1" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Trabalho Prático 01 - GUI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Trabalho Prático 01 - GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="puc-lab03-tp1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="puc-lab03-tp1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Trabalho Prático 01 - GUI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Trabalho Prático 01 - GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="puc-lab03-tp1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="puc-lab03-tp1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="arquivo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Trabalho Prático 01 - GUI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Trabalho Prático 01 - GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="puc-lab03-tp1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="puc-lab03-tp1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="seuproject" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Trabalho Prático 01 - GUI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Trabalho Prático 01 - GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="puc-lab03-tp1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="puc-lab03-tp1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="seuproject" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="puc-lab03-tp1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="puc-lab03-tp1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="estruturas" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Trabalho Prático 01 - GUI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Trabalho Prático 01 - GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="puc-lab03-tp1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="puc-lab03-tp1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="lista" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -340,11 +396,12 @@
       <workItem from="1520200336876" duration="11605000" />
       <workItem from="1520296741892" duration="74000" />
       <workItem from="1520331262672" duration="5138000" />
+      <workItem from="1520791934599" duration="8474000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16817000" />
+    <option name="totallyTimeSpent" value="25291000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -358,8 +415,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -416,7 +473,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -427,23 +484,21 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1179:1953" expanded="false" />
-            <element signature="e#2023#2758#0" expanded="true" />
-            <element signature="e#2757#2758#0" expanded="true" />
-            <element signature="e#5423#5424#0" expanded="true" />
-            <element signature="e#5451#5452#0" expanded="true" />
+            <element signature="class#1244:2018" expanded="false" />
+            <element signature="e#6935#6936#0" expanded="true" />
+            <element signature="e#6963#6964#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/arquivo/Arquivo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="87" column="57" lean-forward="false" selection-start-line="87" selection-start-column="57" selection-end-line="87" selection-end-column="57" />
+        <state relative-caret-position="510">
+          <caret line="123" column="52" lean-forward="false" selection-start-line="123" selection-start-column="52" selection-end-line="123" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#gravarPF#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#lerPF#0;class#Arquivo#0" expanded="false" />
+            <element signature="method#ordenarNome#0;class#Arquivo#0" expanded="false" />
+            <element signature="method#fecharManipuladoresEscrita#0;class#Arquivo#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -455,8 +510,77 @@
           <folding>
             <element signature="e#592#593#0" expanded="true" />
             <element signature="e#618#619#0" expanded="true" />
-            <element signature="e#661#662#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
+            <element signature="e#656#657#0" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+            <element signature="e#892#893#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lista/ListaClientes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/seuproject/App.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clientes.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/seuproject/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#1244:2018" expanded="false" />
+            <element signature="e#6935#6936#0" expanded="true" />
+            <element signature="e#6963#6964#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arquivo/Arquivo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="87" column="57" lean-forward="false" selection-start-line="87" selection-start-column="57" selection-end-line="87" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#ordenarNome#0;class#Arquivo#0" expanded="false" />
+            <element signature="method#fecharManipuladoresEscrita#0;class#Arquivo#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/estruturas/PessoaFisica.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <folding>
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#618#619#0" expanded="true" />
+            <element signature="e#656#657#0" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+            <element signature="e#892#893#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -498,11 +622,9 @@
           <caret line="72" column="57" lean-forward="false" selection-start-line="72" selection-start-column="57" selection-end-line="72" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1179:1953" expanded="false" />
-            <element signature="e#2023#2758#0" expanded="true" />
-            <element signature="e#2757#2758#0" expanded="true" />
-            <element signature="e#5423#5424#0" expanded="true" />
-            <element signature="e#5451#5452#0" expanded="true" />
+            <element signature="class#1244:2018" expanded="false" />
+            <element signature="e#6935#6936#0" expanded="true" />
+            <element signature="e#6963#6964#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -513,8 +635,8 @@
           <caret line="87" column="57" lean-forward="false" selection-start-line="87" selection-start-column="57" selection-end-line="87" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#gravarPF#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#lerPF#0;class#Arquivo#0" expanded="false" />
+            <element signature="method#ordenarNome#0;class#Arquivo#0" expanded="false" />
+            <element signature="method#fecharManipuladoresEscrita#0;class#Arquivo#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -526,8 +648,12 @@
           <folding>
             <element signature="e#592#593#0" expanded="true" />
             <element signature="e#618#619#0" expanded="true" />
-            <element signature="e#661#662#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
+            <element signature="e#656#657#0" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+            <element signature="e#892#893#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -568,54 +694,87 @@
     <entry file="file://$PROJECT_DIR$/src/com/seuproject/ClientsList.java" />
     <entry file="file://$PROJECT_DIR$/../Aula 01/Exercicio 02/src/Aplicacao.java" />
     <entry file="file://$PROJECT_DIR$/../Aula 01/Exercicio 02/src/Arquivo.java" />
-    <entry file="file://$PROJECT_DIR$/src/estruturas/Cliente.java">
+    <entry file="file://$PROJECT_DIR$/src/lista/NoCliente.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+        <state relative-caret-position="340">
+          <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clientes.json">
+    <entry file="file://$USER_HOME$/OneDrive/Documentos/PUC/Aulas/Semestre 02/Laboratório de Programação/Pratica 10/Exercicio4/src/mainGravarMusica/MainGravarMusica.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/arquivo/Arquivo.java">
+    <entry file="file://$USER_HOME$/OneDrive/Documentos/PUC/Aulas/Semestre 02/Laboratório de Programação/Pratica 10/Exercicio4/src/exercicio4/Playlist.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="123" column="52" lean-forward="false" selection-start-line="123" selection-start-column="52" selection-end-line="123" selection-end-column="52" />
+        <state relative-caret-position="-3463">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/io/FileInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1477">
+          <caret line="122" column="26" lean-forward="false" selection-start-line="122" selection-start-column="11" selection-end-line="122" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/io/BufferedWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3541">
+          <caret line="257" column="4" lean-forward="true" selection-start-line="257" selection-start-column="4" selection-end-line="257" selection-end-column="4" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#gravarPF#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#lerPF#0;class#Arquivo#0" expanded="false" />
+            <element signature="e#2279#2280#0" expanded="false" />
+            <element signature="e#2327#2328#0" expanded="false" />
+            <element signature="e#7807#7831#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/estruturas/PessoaFisica.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/nio/file/Path.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-          <folding>
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#618#619#0" expanded="true" />
-            <element signature="e#661#662#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="202">
+          <caret line="97" column="17" lean-forward="false" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lista/ListaClientes.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/function/Function.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-386">
-          <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="202">
+          <caret line="48" column="6" lean-forward="false" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="2237" column="18" lean-forward="false" selection-start-line="2237" selection-start-column="18" selection-end-line="2237" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/nio/file/Files.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2733">
+          <caret line="3391" column="23" lean-forward="false" selection-start-line="3391" selection-start-column="23" selection-end-line="3391" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/OneDrive/Documentos/PUC/Aulas/Semestre 02/Laboratório de Programação/Prática 08/Prática8 P3-E3 EL/Pratica8 P3-E3 - Escrita-Leitura/src/banco/ContaDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1790">
+          <caret line="119" column="9" lean-forward="false" selection-start-line="119" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -624,17 +783,78 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/seuproject/App.java">
+    <entry file="file://$PROJECT_DIR$/src/lista/ListaClientes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="124" column="42" lean-forward="true" selection-start-line="124" selection-start-column="42" selection-end-line="124" selection-end-column="42" />
+        <state relative-caret-position="-459">
+          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1179:1953" expanded="false" />
-            <element signature="e#2023#2758#0" expanded="true" />
-            <element signature="e#2757#2758#0" expanded="true" />
-            <element signature="e#5423#5424#0" expanded="true" />
-            <element signature="e#5451#5452#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/estruturas/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/estruturas/PessoaFisica.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="51" />
+          <folding>
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#618#619#0" expanded="true" />
+            <element signature="e#656#657#0" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+            <element signature="e#892#893#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/seuproject/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="142" column="43" lean-forward="false" selection-start-line="142" selection-start-column="43" selection-end-line="142" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#1244:2018" expanded="false" />
+            <element signature="e#6935#6936#0" expanded="true" />
+            <element signature="e#6963#6964#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clientes.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="114" lean-forward="true" selection-start-line="0" selection-start-column="114" selection-end-line="0" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clientes_temp.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arquivo/Arquivo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="195" column="0" lean-forward="true" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#ordenarNome#0;class#Arquivo#0" expanded="false" />
+            <element signature="method#fecharManipuladoresEscrita#0;class#Arquivo#0" expanded="false" />
           </folding>
         </state>
       </provider>

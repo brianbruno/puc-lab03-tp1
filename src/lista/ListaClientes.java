@@ -2,6 +2,7 @@ package lista;
 
 import com.seuproject.App;
 import estruturas.Cliente;
+import estruturas.PessoaFisica;
 
 public class ListaClientes {
 
@@ -11,12 +12,12 @@ public class ListaClientes {
         this.lista = new NoCliente();
     }
 
-    public void inserir (Cliente dados) {
+    public void inserir (PessoaFisica dados) {
         NoCliente clientes = getLista();
         inserirMetodo(dados, clientes);
     }
 
-    private void inserirMetodo (Cliente dados, NoCliente clientes) {
+    private void inserirMetodo (PessoaFisica dados, NoCliente clientes) {
 
         if (clientes.getProx() == null) {
             clientes.setProx(new NoCliente());
@@ -51,13 +52,13 @@ public class ListaClientes {
         }
     }
 
-    public Cliente buscaClienteCodigo (String codigo) {
+    public PessoaFisica buscaClienteCodigo (String codigo) {
 
         NoCliente listaClientes = lista.getProx();
-        Cliente clienteBusca = null;
+        PessoaFisica clienteBusca = null;
 
         while(listaClientes != null) {
-            Cliente cliente = listaClientes.getCliente();
+            PessoaFisica cliente = listaClientes.getCliente();
 
             if(cliente.getCodigo().equals(codigo)) {
                 clienteBusca = cliente;

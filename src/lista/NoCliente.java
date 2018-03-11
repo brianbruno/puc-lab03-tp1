@@ -4,7 +4,7 @@ import estruturas.*;
 
 public class NoCliente {
 
-    Cliente cliente;
+    PessoaFisica cliente;
     NoCliente prox;
 
     public NoCliente() {
@@ -12,11 +12,11 @@ public class NoCliente {
         this.prox = null;
     }
 
-    public Cliente getCliente() {
+    public PessoaFisica getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
+    public void setCliente(PessoaFisica cliente) {
         this.cliente = cliente;
     }
 
