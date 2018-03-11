@@ -8,6 +8,7 @@ public abstract class Cliente {
    private String codigo;
    private String nome;
    private String endereco;
+   private String ativo;
    private int prioridade;
 
     public Cliente(String nome, String endereco) {
@@ -42,6 +43,14 @@ public abstract class Cliente {
 
     public String getCodigo() {
         return codigo;
+    }
+
+    public String getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(String ativo) {
+        this.ativo = ativo;
     }
 
     private String gerarCodigo() {

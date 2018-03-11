@@ -62,13 +62,13 @@ public class Arquivo {
         }
 	}
 
-	public boolean atualizarPF (PessoaFisica dadoAntigo, PessoaFisica cliente) {
+	public boolean atualizarPF (PessoaFisica cliente) {
         boolean resultado = false;
         JSONParser parser = new JSONParser();
 
         try {
             File arqTemp = new File ("clientes_temp.json");
-            arq = new File ("clientes.json");
+            File arq = new File ("clientes.json");
             saida = new FileOutputStream (arqTemp, true);
             gravador = new OutputStreamWriter (saida);
             buffer_saida = new BufferedWriter (gravador);
@@ -90,10 +90,60 @@ public class Arquivo {
                     buffer_saida.flush();
                 }
             }
+            fecharManipuladoresEscrita();
 
-            boolean success = (new File(NOMEARQUIVO)).delete();
-            arqTemp.renameTo(new File(NOMEARQUIVO));
-            arqTemp.delete();
+            if(delete(arq.getAbsoluteFile())) {
+                if (arqTemp.renameTo(new File(NOMEARQUIVO))) ;
+                    resultado = true;
+            }
+
+        } catch (Exception e) {
+            System.err.println ("ERRO ao atualizar o cliente [" + cliente.getCodigo() + "] no disco rígido!");
+            resultado = false;
+            e.printStackTrace ();
+        }
+
+        return resultado;
+    }
+
+    public boolean deletarPF (PessoaFisica cliente) {
+        boolean resultado = false;
+        JSONParser parser = new JSONParser();
+
+        try {
+            File arqTemp = new File ("clientes_temp.json");
+            File arq = new File ("clientes.json");
+            saida = new FileOutputStream (arqTemp, true);
+            gravador = new OutputStreamWriter (saida);
+            buffer_saida = new BufferedWriter (gravador);
+
+            entrada = new FileInputStream (arq);
+            leitor = new InputStreamReader (entrada);
+            buffer_entrada = new BufferedReader (leitor);
+            String linha;
+
+            while ((linha = buffer_entrada.readLine()) != null) {
+                Object obj = parser.parse(linha);
+                JSONObject jsonObject = (JSONObject) obj;
+                String codigo = (String)  jsonObject.get("codigo");
+
+                if(codigo.equals(cliente.getCodigo())) {
+                    linha = buffer_entrada.readLine();
+                    if(linha != null)
+                        buffer_saida.write(linha + separadorDeLinha);
+                    else
+                        continue;
+                } else {
+                    buffer_saida.write(linha + separadorDeLinha);
+                    buffer_saida.flush();
+                }
+            }
+            fecharManipuladoresEscrita();
+
+            if(delete(arq.getAbsoluteFile())) {
+                if (arqTemp.renameTo(new File(NOMEARQUIVO))) ;
+                resultado = true;
+            }
 
         } catch (Exception e) {
             System.err.println ("ERRO ao atualizar o cliente [" + cliente.getCodigo() + "] no disco rígido!");
@@ -141,6 +191,8 @@ public class Arquivo {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            fecharManipuladoresEscrita();
         }
         return listaClientes;
     }
@@ -161,6 +213,8 @@ public class Arquivo {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            fecharManipuladoresEscrita();
         }
     }
 
@@ -169,12 +223,22 @@ public class Arquivo {
             if (buffer_saida != null) {
                 buffer_saida.close();
             }
+            if (buffer_entrada != null) {
+                buffer_entrada.close();
+            }
             if (gravador != null) {
                 gravador.close();
+            }
+            if (leitor != null) {
+                leitor.close();
             }
             if (saida != null) {
                 saida.close();
             }
+            if (entrada != null) {
+                entrada.close();
+            }
+
         } catch (IOException e) {
             System.out.println("ERRO ao fechar os manipuladores de escrita do arquivo");
         }
@@ -191,14 +255,11 @@ public class Arquivo {
         return novaString;
     }
 
-    private void delete(File file) {
+    private boolean delete(File file) {
         boolean success = false;
 
         success = file.delete();
-        if (success) {
-            System.out.println(file.getAbsoluteFile() + " Deleted");
-        } else {
-            System.out.println(file.getAbsoluteFile() + " Deletion failed!!!");
-        }
+
+        return success;
     }
 }

@@ -30,6 +30,7 @@ public class App {
     private JButton btnEditarCliente;
     private JLabel txtCPFClie;
     private JLabel txtCapFinClie;
+    private JButton excluirClienteButton;
     public static DefaultListModel clientesList;
 
     private static ListaClientes lista = new ListaClientes();
@@ -103,6 +104,7 @@ public class App {
                     JOptionPane.showMessageDialog(null, "Digite uma busca");
             }
         });
+
         // Botão de editar cliente
         btnEditarCliente.addActionListener(new ActionListener() {
             @Override
@@ -111,7 +113,6 @@ public class App {
                 if(s != null) {
                     String codigo = s.substring(0, 10);
                     PessoaFisica cliente = getLista().buscaClienteCodigo(codigo);
-                    PessoaFisica clienteAntigo = cliente;
 
                     JTextField nomeField = new JTextField(25);
                     JTextField endeField = new JTextField(25);
@@ -136,10 +137,11 @@ public class App {
                             cliente.setEndereco(endeField.getText());
                             cliente.setCPF(cpfField.getText());
                             cliente.setCapitalFinanceiro(Float.parseFloat(capfiField.getText()));
-                            if(arquivo.atualizarPF(clienteAntigo, cliente))
+                            if(arquivo.atualizarPF(cliente))
                                 JOptionPane.showMessageDialog(null, "Cliente atualizado com sucesso.");
                             else
                                 JOptionPane.showMessageDialog(null, "Não foi possível atualizar o cliente.");
+                            lista = arquivo.lerPF();
                             popularLista();
                         } catch (Exception erro) {
                             JOptionPane.showMessageDialog(null, "Verifique se digitou todos os campos corretamente. " + erro);
@@ -147,6 +149,31 @@ public class App {
                     }
                 } else
                     JOptionPane.showMessageDialog(null, "Selecione um cliente");
+            }
+        });
+
+        // Botão de excluir cliente
+        excluirClienteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String s = (String) listaClientes.getSelectedValue();
+                if(s != null) {
+                    String codigo = s.substring(0, 10);
+                    PessoaFisica cliente = getLista().buscaClienteCodigo(codigo);
+
+                    int dialogButton = JOptionPane.YES_NO_OPTION;
+                    int dialogResult = JOptionPane.showConfirmDialog(null, "Deseja deletar o cliente " + cliente.getNome() + "?", "Atenção", dialogButton);
+
+                    if (dialogResult == JOptionPane.YES_OPTION) {
+                        if(arquivo.deletarPF(cliente))
+                            JOptionPane.showMessageDialog(null, "Cliente excluído com sucesso.");
+                        else
+                            JOptionPane.showMessageDialog(null, "Não foi possível excluir o cliente.");
+                        lista = arquivo.lerPF();
+                        popularLista();
+                    }
+
+                }
             }
         });
     }
@@ -178,6 +205,12 @@ public class App {
             }
             listaClientes = listaClientes.getProx();
         }
+
+        txtListClie.setText("Cliente: ");
+        txtNomeClie.setText("Nome: ");
+        txtEndClie.setText("Endereço: ");
+        txtCPFClie.setText("CPF: ");
+        txtCapFinClie.setText("Cap. Financeiro: ");
 
         this.listaClientes.setModel(clientesList);
     }
