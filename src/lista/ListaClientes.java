@@ -1,5 +1,6 @@
 package lista;
 
+import arquivo.Arquivo;
 import com.seuproject.App;
 import estruturas.Cliente;
 import estruturas.PessoaFisica;
@@ -53,6 +54,12 @@ public class ListaClientes {
     }
 
     public PessoaFisica buscaClienteCodigo (String codigo) {
+
+        Arquivo arquivo = new Arquivo();
+        return arquivo.buscarPF(codigo);
+    }
+
+    public PessoaFisica buscaClienteCodigoMemoria (String codigo) {
 
         NoCliente listaClientes = lista.getProx();
         PessoaFisica clienteBusca = null;

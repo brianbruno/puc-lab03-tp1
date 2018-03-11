@@ -15,6 +15,7 @@ public abstract class Cliente {
         clientes++;
         setNome(nome);
         setEndereco(endereco);
+        setAtivo("S");
         this.codigo = this.gerarCodigo();
     }
 
