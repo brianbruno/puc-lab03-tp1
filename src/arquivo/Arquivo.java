@@ -181,7 +181,7 @@ public class Arquivo {
                 String codigo = (String)  jsonObject.get("codigo");
                 String cpf = (String)  jsonObject.get("cpf");
                 String ativo = (String)  jsonObject.get("ativo");
-                double cfdouble = (Double) jsonObject.get("cf");
+                double cfdouble = Double.parseDouble((String) jsonObject.get("cf"));
                 String valor = String.valueOf(cfdouble);
                 float cf = Float.parseFloat(valor);
 
@@ -233,7 +233,7 @@ public class Arquivo {
                     String codg = (String)  jsonObject.get("codigo");
                     String cpf = (String)  jsonObject.get("cpf");
                     String ativo = (String)  jsonObject.get("ativo");
-                    double cfdouble = (Double) jsonObject.get("cf");
+                    double cfdouble = Double.parseDouble((String) jsonObject.get("cf"));
                     String valor = String.valueOf(cfdouble);
                     float cf = Float.parseFloat(valor);
 
@@ -259,78 +259,51 @@ public class Arquivo {
 	    return cliente;
     }
 
-   /* public void ordenarNome () {
+
+    private String leftpad(String text, int length) {
+        return String.format("%" + length + "." + length + "s", text);
+    }
+
+    private String rightpad(String text, int length) {
+        return String.format("%-" + length + "." + length + "s", text);
+    }
+
+    public void buscaBinaria (String codigo) {
         JSONParser parser = new JSONParser();
-
+        PessoaFisica cliente = null;
         try {
-            File arq1 = new File ("clientes_1.json");
-            FileOutputStream saida1 = new FileOutputStream (arq1, true);
-            OutputStreamWriter gravador1 = new OutputStreamWriter (saida1);
-            BufferedWriter buffer_saida1 = new BufferedWriter (gravador1);
 
-            File arq2 = new File ("clientes_2.json");
-            FileOutputStream saida2 = new FileOutputStream (arq2, true);
-            OutputStreamWriter gravador2 = new OutputStreamWriter (saida2);
-            BufferedWriter buffer_saida2 = new BufferedWriter (gravador2);
+            RandomAccessFile arq = new RandomAccessFile ("clientes.json", "r");
 
-            File arq3 = new File ("clientes_3.json");
-            FileOutputStream saida3 = new FileOutputStream (arq3, true);
-            OutputStreamWriter gravador3 = new OutputStreamWriter (saida3);
-            BufferedWriter buffer_saida3= new BufferedWriter (gravador3);
+            long tamanho = arq.length();
 
+            while (tamanho > 1) {
 
-            File arq = new File ("clientes.json");
-            entrada = new FileInputStream (arq);
-            leitor = new InputStreamReader (entrada);
-            buffer_entrada = new BufferedReader (leitor);
-            String linha;
+                arq.seek(arq.length()/2);
+                String jsonLine = arq.readLine();
+                Object obj = parser.parse(jsonLine);
+                JSONObject jsonObject = (JSONObject) obj;
+                String cod = (String)  jsonObject.get("codigo");
+                int comp = cod.compareTo(codigo);
 
-            while ((linha = buffer_entrada.readLine()) != null) {
-                String linhas[] = new String[4];
-                for(int i = 0; i<4; i++) {
-                    if(linha != null) {
-                        linhas[i] = linha;
-                    }
-                    linha = buffer_entrada.readLine();
+                if(comp < 0) {
+
+                } else if(comp > 0) {
+                    System.out.println("str1 maior que str2");
+                } else {
+                    montarObjeto(jsonObject);
+                    break;
                 }
 
-                ordenarVetor(linhas);
-                for(int i = 0; i<4; i++) {
-                    buffer_saida1.write(linhas[i] + separadorDeLinha);
-                }
-                buffer_saida2.write("-");
-
-                String linhas2[] = new String[4];
-                for(int i = 0; i<4; i++) {
-                    if(linha != null) {
-                        linhas2[i] = linha;
-                    }
-                    linha = buffer_entrada.readLine();
-                }
-
-                ordenarVetor(linhas2);
-                for(int i = 0; i<4; i++) {
-                    buffer_saida2.write(linhas2[i] + separadorDeLinha);
-                }
-                buffer_saida2.write("-");
-            }
-
-
-
-            if(delete(arq.getAbsoluteFile())) {
-                if (arqTemp.renameTo(new File(NOMEARQUIVO))) ;
-                resultado = true;
             }
 
         } catch (Exception e) {
-            System.err.println ("ERRO ao atualizar o cliente [" + cliente.getCodigo() + "] no disco rígido!");
-            resultado = false;
             e.printStackTrace ();
         } finally {
             fecharManipuladoresEscrita();
         }
 
-    }*/
+    }
 
     public static void fecharManipuladoresEscrita() {
         try {
@@ -360,11 +333,11 @@ public class Arquivo {
 
     public String montarString (PessoaFisica cliente) {
         JSONObject novoDado = new JSONObject();
-        novoDado.put("codigo", cliente.getCodigo());
-        novoDado.put("nome", cliente.getNome());
-        novoDado.put("endereco", cliente.getEndereco());
-        novoDado.put("cpf", cliente.getCPF());
-        novoDado.put("cf", cliente.getCapitalFinanceiro());
+        novoDado.put("codigo", rightpad(cliente.getCodigo(), 10));
+        novoDado.put("nome", rightpad(cliente.getNome(), 40));
+        novoDado.put("endereco", rightpad(cliente.getEndereco(), 50));
+        novoDado.put("cpf", leftpad(cliente.getCPF(), 11));
+        novoDado.put("cf", leftpad(String.valueOf(cliente.getCapitalFinanceiro()),10));
         novoDado.put("ativo", cliente.getAtivo());
         String novaString = novoDado.toJSONString() + separadorDeLinha;
         return novaString;
@@ -409,4 +382,36 @@ public class Arquivo {
 
         return linhas;
     }
+
+    public PessoaFisica montarObjeto (JSONObject jsonObject) {
+
+	    PessoaFisica cliente = null;
+        String nome = (String) jsonObject.get("nome");
+        String endereco = (String) jsonObject.get("endereco");
+        String codg = (String)  jsonObject.get("codigo");
+        String cpf = (String)  jsonObject.get("cpf");
+        String ativo = (String)  jsonObject.get("ativo");
+        double cfdouble = Double.parseDouble((String) jsonObject.get("cf"));
+        String valor = String.valueOf(cfdouble);
+        float cf = Float.parseFloat(valor);
+
+        cliente = new PessoaFisica(codg, nome, endereco, cpf, cf);
+        cliente.setAtivo(ativo);
+	    return cliente;
+    }
+
+    /*File arq1 = new File ("clientes_1.json");
+            FileOutputStream saida1 = new FileOutputStream (arq1, true);
+            OutputStreamWriter gravador1 = new OutputStreamWriter (saida1);
+            BufferedWriter buffer_saida1 = new BufferedWriter (gravador1);
+
+            File arq2 = new File ("clientes_2.json");
+            FileOutputStream saida2 = new FileOutputStream (arq2, true);
+            OutputStreamWriter gravador2 = new OutputStreamWriter (saida2);
+            BufferedWriter buffer_saida2 = new BufferedWriter (gravador2);
+
+            File arq3 = new File ("clientes_3.json");
+            FileOutputStream saida3 = new FileOutputStream (arq3, true);
+            OutputStreamWriter gravador3 = new OutputStreamWriter (saida3);
+            BufferedWriter buffer_saida3= new BufferedWriter (gravador3);*/
 }

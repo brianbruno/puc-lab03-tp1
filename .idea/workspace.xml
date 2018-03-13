@@ -7,13 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fa88cdd-9b90-486f-b8a1-7e83a6b17875" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/clientes.json" afterPath="$PROJECT_DIR$/clientes.json" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/arquivo/Arquivo.class" afterPath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/arquivo/Arquivo.class" />
       <change beforePath="$PROJECT_DIR$/src/arquivo/Arquivo.java" afterPath="$PROJECT_DIR$/src/arquivo/Arquivo.java" />
       <change beforePath="$PROJECT_DIR$/src/com/seuproject/App.form" afterPath="$PROJECT_DIR$/src/com/seuproject/App.form" />
-      <change beforePath="$PROJECT_DIR$/src/com/seuproject/App.java" afterPath="$PROJECT_DIR$/src/com/seuproject/App.java" />
-      <change beforePath="$PROJECT_DIR$/src/estruturas/Cliente.java" afterPath="$PROJECT_DIR$/src/estruturas/Cliente.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,7 +24,7 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/seuproject/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="1857">
               <caret line="217" column="76" lean-forward="false" selection-start-line="217" selection-start-column="69" selection-end-line="217" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -46,29 +42,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Arquivo.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Arquivo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/arquivo/Arquivo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="193" column="45" lean-forward="false" selection-start-line="193" selection-start-column="45" selection-end-line="193" selection-end-column="45" />
+            <state relative-caret-position="209">
+              <caret line="283" column="52" lean-forward="true" selection-start-line="283" selection-start-column="52" selection-end-line="283" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#atualizarPF#0;class#Arquivo#0" expanded="false" />
                 <element signature="method#deletarPF#0;class#Arquivo#0" expanded="false" />
-                <element signature="method#buscarPF#0;class#Arquivo#0" expanded="false" />
+                <element signature="e#9199#9200#0" expanded="true" />
+                <element signature="e#9276#9277#0" expanded="true" />
+                <element signature="e#9332#9333#0" expanded="true" />
+                <element signature="e#9410#9411#0" expanded="true" />
                 <element signature="method#fecharManipuladoresEscrita#0;class#Arquivo#0" expanded="false" />
-                <element signature="method#montarString#0;class#Arquivo#0" expanded="false" />
                 <element signature="method#delete#0;class#Arquivo#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PessoaFisica.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PessoaFisica.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/estruturas/PessoaFisica.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="22">
+              <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
               <folding>
                 <element signature="e#592#593#0" expanded="true" />
                 <element signature="e#618#619#0" expanded="true" />
@@ -86,8 +84,8 @@
       <file leaf-file-name="clientes.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clientes.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -112,7 +110,7 @@
       <file leaf-file-name="Cliente.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/estruturas/Cliente.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
+            <state relative-caret-position="362">
               <caret line="63" column="41" lean-forward="true" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
               <folding>
                 <element signature="e#1476#1477#0" expanded="true" />
@@ -155,11 +153,11 @@
         <option value="$PROJECT_DIR$/src/estruturas/PessoaFisica.java" />
         <option value="$PROJECT_DIR$/clientes_temp.json" />
         <option value="$PROJECT_DIR$/src/lista/ListaClientes.java" />
-        <option value="$PROJECT_DIR$/src/com/seuproject/App.form" />
         <option value="$PROJECT_DIR$/src/com/seuproject/App.java" />
-        <option value="$PROJECT_DIR$/src/arquivo/Arquivo.java" />
         <option value="$PROJECT_DIR$/src/estruturas/Cliente.java" />
+        <option value="$PROJECT_DIR$/src/com/seuproject/App.form" />
         <option value="$PROJECT_DIR$/clientes.json" />
+        <option value="$PROJECT_DIR$/src/arquivo/Arquivo.java" />
       </list>
     </option>
   </component>
@@ -394,12 +392,12 @@
       <workItem from="1520296741892" duration="74000" />
       <workItem from="1520331262672" duration="5138000" />
       <workItem from="1520791934599" duration="15550000" />
-      <workItem from="1520936034897" duration="1671000" />
+      <workItem from="1520936034897" duration="4436000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34038000" />
+    <option name="totallyTimeSpent" value="36803000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -506,9 +504,11 @@
             <element signature="imports" expanded="true" />
             <element signature="method#atualizarPF#0;class#Arquivo#0" expanded="false" />
             <element signature="method#deletarPF#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#buscarPF#0;class#Arquivo#0" expanded="false" />
+            <element signature="e#9199#9200#0" expanded="true" />
+            <element signature="e#9276#9277#0" expanded="true" />
+            <element signature="e#9332#9333#0" expanded="true" />
+            <element signature="e#9410#9411#0" expanded="true" />
             <element signature="method#fecharManipuladoresEscrita#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#montarString#0;class#Arquivo#0" expanded="false" />
             <element signature="method#delete#0;class#Arquivo#0" expanded="false" />
           </folding>
         </state>
@@ -534,9 +534,11 @@
             <element signature="imports" expanded="true" />
             <element signature="method#atualizarPF#0;class#Arquivo#0" expanded="false" />
             <element signature="method#deletarPF#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#buscarPF#0;class#Arquivo#0" expanded="false" />
+            <element signature="e#9199#9200#0" expanded="true" />
+            <element signature="e#9276#9277#0" expanded="true" />
+            <element signature="e#9332#9333#0" expanded="true" />
+            <element signature="e#9410#9411#0" expanded="true" />
             <element signature="method#fecharManipuladoresEscrita#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#montarString#0;class#Arquivo#0" expanded="false" />
             <element signature="method#delete#0;class#Arquivo#0" expanded="false" />
           </folding>
         </state>
@@ -606,9 +608,11 @@
             <element signature="imports" expanded="true" />
             <element signature="method#atualizarPF#0;class#Arquivo#0" expanded="false" />
             <element signature="method#deletarPF#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#buscarPF#0;class#Arquivo#0" expanded="false" />
+            <element signature="e#9199#9200#0" expanded="true" />
+            <element signature="e#9276#9277#0" expanded="true" />
+            <element signature="e#9332#9333#0" expanded="true" />
+            <element signature="e#9410#9411#0" expanded="true" />
             <element signature="method#fecharManipuladoresEscrita#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#montarString#0;class#Arquivo#0" expanded="false" />
             <element signature="method#delete#0;class#Arquivo#0" expanded="false" />
           </folding>
         </state>
@@ -690,9 +694,11 @@
             <element signature="imports" expanded="true" />
             <element signature="method#atualizarPF#0;class#Arquivo#0" expanded="false" />
             <element signature="method#deletarPF#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#buscarPF#0;class#Arquivo#0" expanded="false" />
+            <element signature="e#9199#9200#0" expanded="true" />
+            <element signature="e#9276#9277#0" expanded="true" />
+            <element signature="e#9332#9333#0" expanded="true" />
+            <element signature="e#9410#9411#0" expanded="true" />
             <element signature="method#fecharManipuladoresEscrita#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#montarString#0;class#Arquivo#0" expanded="false" />
             <element signature="method#delete#0;class#Arquivo#0" expanded="false" />
           </folding>
         </state>
@@ -791,9 +797,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/seuproject/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1857">
+          <caret line="217" column="76" lean-forward="false" selection-start-line="217" selection-start-column="69" selection-end-line="217" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8249#8250#0" expanded="true" />
+            <element signature="e#8277#8278#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/seuproject/App.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/estruturas/Cliente.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
+        <state relative-caret-position="362">
           <caret line="63" column="41" lean-forward="true" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
           <folding>
             <element signature="e#1476#1477#0" expanded="true" />
@@ -805,49 +828,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/clientes.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/arquivo/Arquivo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="193" column="45" lean-forward="false" selection-start-line="193" selection-start-column="45" selection-end-line="193" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#atualizarPF#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#deletarPF#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#buscarPF#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#fecharManipuladoresEscrita#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#montarString#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#delete#0;class#Arquivo#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/seuproject/App.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/seuproject/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="217" column="76" lean-forward="false" selection-start-line="217" selection-start-column="69" selection-end-line="217" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8249#8250#0" expanded="true" />
-            <element signature="e#8277#8278#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/estruturas/PessoaFisica.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="22">
+          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
           <folding>
             <element signature="e#592#593#0" expanded="true" />
             <element signature="e#618#619#0" expanded="true" />
@@ -857,6 +847,24 @@
             <element signature="e#809#810#0" expanded="true" />
             <element signature="e#852#853#0" expanded="true" />
             <element signature="e#892#893#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arquivo/Arquivo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="283" column="52" lean-forward="true" selection-start-line="283" selection-start-column="52" selection-end-line="283" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#atualizarPF#0;class#Arquivo#0" expanded="false" />
+            <element signature="method#deletarPF#0;class#Arquivo#0" expanded="false" />
+            <element signature="e#9199#9200#0" expanded="true" />
+            <element signature="e#9276#9277#0" expanded="true" />
+            <element signature="e#9332#9333#0" expanded="true" />
+            <element signature="e#9410#9411#0" expanded="true" />
+            <element signature="method#fecharManipuladoresEscrita#0;class#Arquivo#0" expanded="false" />
+            <element signature="method#delete#0;class#Arquivo#0" expanded="false" />
           </folding>
         </state>
       </provider>

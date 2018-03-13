@@ -253,7 +253,9 @@
                         <preferred-size width="150" height="-1"/>
                       </grid>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <columns value="50"/>
+                    </properties>
                   </component>
                   <component id="e5cf7" class="javax.swing.JLabel">
                     <constraints>
@@ -277,7 +279,9 @@
                         <preferred-size width="150" height="-1"/>
                       </grid>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <columns value="40"/>
+                    </properties>
                   </component>
                   <component id="ef286" class="javax.swing.JLabel">
                     <constraints>
@@ -293,7 +297,9 @@
                         <preferred-size width="150" height="-1"/>
                       </grid>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <columns value="11"/>
+                    </properties>
                   </component>
                   <component id="d811" class="javax.swing.JLabel">
                     <constraints>
@@ -309,7 +315,9 @@
                         <preferred-size width="150" height="-1"/>
                       </grid>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <columns value="10"/>
+                    </properties>
                   </component>
                   <component id="b7575" class="javax.swing.JButton" binding="cadastrarButton" default-binding="true">
                     <constraints>
