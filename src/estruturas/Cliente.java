@@ -20,7 +20,6 @@ public abstract class Cliente {
     }
 
     public Cliente(String codigo, String nome, String endereco) {
-        clientes++;
         setNome(nome);
         setEndereco(endereco);
         this.codigo = codigo;
@@ -60,5 +59,13 @@ public abstract class Cliente {
         String codigoInicial = clientes.toString() + "-" + aleatorio.toString();
         String codigo = String.format("%10s", codigoInicial).replace(' ', '0');
         return codigo;
+    }
+
+    public static Integer getClientes() {
+        return clientes;
+    }
+
+    public static void setClientes(Integer clientes) {
+        Cliente.clientes = clientes;
     }
 }

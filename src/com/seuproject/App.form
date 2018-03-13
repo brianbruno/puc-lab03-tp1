@@ -48,12 +48,12 @@
                   <grid row="5" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
-              <component id="1999e" class="javax.swing.JLabel">
+              <component id="1999e" class="javax.swing.JLabel" binding="txtTotalClientes">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Lista de Clientes"/>
+                  <text value="Total de clientes cadastrados: 0"/>
                 </properties>
               </component>
               <grid id="5ce45" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">

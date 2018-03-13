@@ -33,7 +33,9 @@ public class Arquivo {
     private static final String separadorDeLinha = System.getProperty ("line.separator");
     private static final String NOMEARQUIVO = "clientes.json";
 
-	public void gravarPF (PessoaFisica cliente) {
+	public boolean gravarPF (PessoaFisica cliente) {
+	    boolean resultado = false;
+
 		try {
 			arq = new File ("clientes.json");
 			/* ---------------------------------------------
@@ -53,13 +55,15 @@ public class Arquivo {
             buffer_saida.write(montarString(cliente));
 
 			buffer_saida.flush();
-
+            resultado = true;
 		} catch (Exception e) {
 			System.out.println ("ERRO ao gravar o cliente [" + cliente.getCodigo() + "] no disco rígido!");
 			e.printStackTrace ();
 		}  finally {
             fecharManipuladoresEscrita();
         }
+
+        return resultado;
 	}
 
 	public boolean atualizarPF (PessoaFisica cliente) {
@@ -158,6 +162,7 @@ public class Arquivo {
         JSONParser parser = new JSONParser();
 
         ListaClientes listaClientes = new ListaClientes();
+        Integer totalClientes = 0;
 
         try {
             entrada = new FileInputStream ("clientes.json");
@@ -183,7 +188,10 @@ public class Arquivo {
                 PessoaFisica pf = new PessoaFisica(codigo, nome, endereco, cpf, cf);
                 pf.setAtivo(ativo);
                 listaClientes.inserir(pf);
+                totalClientes++;
             }
+
+            Cliente.clientes = totalClientes;
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

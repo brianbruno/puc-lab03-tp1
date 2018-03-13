@@ -31,6 +31,7 @@ public class App {
     private JLabel txtCPFClie;
     private JLabel txtCapFinClie;
     private JButton excluirClienteButton;
+    private JLabel txtTotalClientes;
     public static DefaultListModel clientesList;
 
     private static ListaClientes lista = new ListaClientes();
@@ -53,7 +54,8 @@ public class App {
                 PessoaFisica pf = new PessoaFisica(nome, endereco, cpf, cf);
 
                 getLista().inserir(pf);
-                arquivo.gravarPF(pf);
+                if(arquivo.gravarPF(pf))
+                    JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso");
 
                 txtNomeCliente.setText("");
                 txtEndCliente.setText("");
@@ -62,6 +64,8 @@ public class App {
 
                 lista = arquivo.lerPF();
                 popularLista();
+
+
             }
         });
 
@@ -211,6 +215,7 @@ public class App {
         txtEndClie.setText("Endereço: ");
         txtCPFClie.setText("CPF: ");
         txtCapFinClie.setText("Cap. Financeiro: ");
+        txtTotalClientes.setText("Total de clientes cadastrados: " + Cliente.clientes);
 
         this.listaClientes.setModel(clientesList);
     }
