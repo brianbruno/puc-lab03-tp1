@@ -56,6 +56,11 @@ public class ListaClientes {
     public PessoaFisica buscaClienteCodigo (String codigo) {
 
         Arquivo arquivo = new Arquivo();
+        return arquivo.getPessoaFisica(codigo);
+    }
+
+    public ListaClientes buscaClienteQualquerCampo (String codigo) {
+        Arquivo arquivo = new Arquivo();
         return arquivo.buscarPF(codigo);
     }
 

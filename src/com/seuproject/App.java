@@ -32,7 +32,14 @@ public class App {
     private JLabel txtCapFinClie;
     private JButton excluirClienteButton;
     private JLabel txtTotalClientes;
+    private JButton btnAtivarDesativar;
+    private JLabel txtStatus;
     public static DefaultListModel clientesList;
+
+    private static final String MSG_NENHUM_CLIENTE = "Selecione um Cliente";
+    private static final String MSG_ATUALIZADO_SUS = "Cliente atualizado com sucesso";
+    private static final String MSG_ATUALIZADO_ERR = "Não foi possível atualizar o cliente";
+    private static final String MSG_CLI_NAO_ENCONT = "Cliente não encontrado";
 
     private static ListaClientes lista = new ListaClientes();
 
@@ -69,7 +76,7 @@ public class App {
             }
         });
 
-        // Botão de buscar
+        // Clique na lista de clientes
         listaClientes.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -79,31 +86,31 @@ public class App {
                 String codigo = s.substring(0, 10);
                 PessoaFisica cliente = getLista().buscaClienteCodigo(codigo);
                 if(cliente.getCodigo() != null) {
-                    txtListClie.setText("Cliente: " + cliente.getCodigo());
-                    txtNomeClie.setText("Nome: " + cliente.getNome());
-                    txtEndClie.setText("Endereço: " + cliente.getEndereco());
-                    txtCPFClie.setText("CPF: " + cliente.getCPF());
-                    txtCapFinClie.setText("Cap. Financeiro: " + cliente.getCapitalFinanceiro());
+                    preencherDados(cliente);
                 } else
-                    JOptionPane.showMessageDialog(null, "Cliente não encontrado");
+                    JOptionPane.showMessageDialog(null, MSG_CLI_NAO_ENCONT);
             }
         });
 
-        // Listener do clique na lista
+        // Botão de buscar
         btnBuscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String codigo = txtBuscaClie.getText();
+
                 if(codigo != "") {
-                    PessoaFisica cliente = getLista().buscaClienteCodigo(codigo);
-                    if(cliente != null) {
-                        txtListClie.setText("Cliente: " + cliente.getCodigo());
-                        txtNomeClie.setText("Nome: " + cliente.getNome());
-                        txtEndClie.setText("Endereço: " + cliente.getEndereco());
-                        txtCPFClie.setText("CPF: " + cliente.getCPF());
-                        txtCapFinClie.setText("Cap. Financeiro: " + cliente.getCapitalFinanceiro());
+
+                    NoCliente lista = arquivo.buscarPF(codigo).getLista();
+                    if(listaClientes != null) {
+                        popularListaComClientes(lista);
                     } else
-                        JOptionPane.showMessageDialog(null, "Cliente não encontrado");
+                        popularListaComClientes(getLista().getLista());
+
+                    /*PessoaFisica cliente = getLista().buscaClienteCodigo(codigo);
+                    if(cliente != null) {
+                        preencherDados(cliente);
+                    } else
+                        JOptionPane.showMessageDialog(null, MSG_CLI_NAO_ENCONT);*/
                 }  else
                     JOptionPane.showMessageDialog(null, "Digite uma busca");
             }
@@ -114,7 +121,9 @@ public class App {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String s = (String) listaClientes.getSelectedValue();
+                int index = listaClientes.getSelectedIndex();
                 if(s != null) {
+
                     String codigo = s.substring(0, 10);
                     PessoaFisica cliente = getLista().buscaClienteCodigo(codigo);
 
@@ -142,17 +151,19 @@ public class App {
                             cliente.setCPF(cpfField.getText());
                             cliente.setCapitalFinanceiro(Float.parseFloat(capfiField.getText()));
                             if(arquivo.atualizarPF(cliente))
-                                JOptionPane.showMessageDialog(null, "Cliente atualizado com sucesso.");
+                                JOptionPane.showMessageDialog(null, MSG_ATUALIZADO_SUS);
                             else
-                                JOptionPane.showMessageDialog(null, "Não foi possível atualizar o cliente.");
+                                JOptionPane.showMessageDialog(null, MSG_ATUALIZADO_ERR);
                             lista = arquivo.lerPF();
                             popularLista();
+                            preencherDados(cliente);
+                            listaClientes.setSelectedIndex(index);
                         } catch (Exception erro) {
                             JOptionPane.showMessageDialog(null, "Verifique se digitou todos os campos corretamente. " + erro);
                         }
                     }
                 } else
-                    JOptionPane.showMessageDialog(null, "Selecione um cliente");
+                    JOptionPane.showMessageDialog(null, MSG_NENHUM_CLIENTE);
             }
         });
 
@@ -176,8 +187,34 @@ public class App {
                         lista = arquivo.lerPF();
                         popularLista();
                     }
-
                 }
+            }
+        });
+
+        // Botão de desativar/ativar cliente. (Exclusao Logica)
+        btnAtivarDesativar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PessoaFisica cliente = getItemSelecionado();
+
+                if(cliente != null) {
+                    int index = listaClientes.getSelectedIndex();
+                    if(cliente.getAtivo().equals("S")) {
+                        cliente.setAtivo("N");
+                    } else if (cliente.getAtivo().equals("N")){
+                        cliente.setAtivo("S");
+                    }
+                    if(arquivo.atualizarPF(cliente))
+                        JOptionPane.showMessageDialog(null, MSG_ATUALIZADO_SUS);
+                    else
+                        JOptionPane.showMessageDialog(null, MSG_ATUALIZADO_ERR);
+
+                    popularLista();
+                    preencherDados(cliente);
+                    listaClientes.setSelectedIndex(index);
+                } else
+                    JOptionPane.showMessageDialog(null, MSG_NENHUM_CLIENTE);
+
             }
         });
     }
@@ -198,10 +235,19 @@ public class App {
     }
 
     public void popularLista () {
-
         clientesList = new DefaultListModel();
-
         NoCliente listaClientes = getLista().getLista();
+        preencherLista(listaClientes);
+
+        this.listaClientes.setModel(clientesList);
+    }
+
+    public void popularListaComClientes (NoCliente listaClientes) {
+        clientesList = new DefaultListModel();
+        preencherLista(listaClientes);
+    }
+
+    public void preencherLista (NoCliente listaClientes) {
         while(listaClientes != null) {
             Cliente cliente = listaClientes.getCliente();
             if(cliente != null) {
@@ -217,6 +263,31 @@ public class App {
         txtCapFinClie.setText("Cap. Financeiro: ");
         txtTotalClientes.setText("Total de clientes cadastrados: " + Cliente.clientes);
 
+
         this.listaClientes.setModel(clientesList);
     }
+
+    public void preencherDados (PessoaFisica cliente) {
+        String status = "Inativo";
+        if(cliente.getAtivo().equals("S"))
+            status = "Ativo";
+
+        txtListClie.setText("Cliente: " + cliente.getCodigo());
+        txtNomeClie.setText("Nome: " + cliente.getNome());
+        txtEndClie.setText("Endereço: " + cliente.getEndereco());
+        txtCPFClie.setText("CPF: " + cliente.getCPF());
+        txtCapFinClie.setText("Cap. Financeiro: " + cliente.getCapitalFinanceiro());
+        txtStatus.setText("Status: " + status);
+    }
+
+    public PessoaFisica getItemSelecionado () {
+        String s = (String) listaClientes.getSelectedValue();
+        PessoaFisica cliente = null;
+        if(s != null) {
+            String codigo = s.substring(0, 10);
+            cliente = getLista().buscaClienteCodigo(codigo);
+        }
+        return cliente;
+    }
+
 }

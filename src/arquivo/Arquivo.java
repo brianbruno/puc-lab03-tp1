@@ -32,6 +32,7 @@ public class Arquivo {
     private static BufferedReader buffer_entrada = null;
     private static final String separadorDeLinha = System.getProperty ("line.separator");
     private static final String NOMEARQUIVO = "clientes.json";
+    private static final long TAMANHO_BYTE_STRING = 1;
 
 	public boolean gravarPF (PessoaFisica cliente) {
 	    boolean resultado = false;
@@ -185,7 +186,7 @@ public class Arquivo {
                 String valor = String.valueOf(cfdouble);
                 float cf = Float.parseFloat(valor);
 
-                PessoaFisica pf = new PessoaFisica(codigo, nome, endereco, cpf, cf);
+                PessoaFisica pf = new PessoaFisica(codigo.trim(), nome.trim(), endereco.trim(), cpf.trim(), cf);
                 pf.setAtivo(ativo);
                 listaClientes.inserir(pf);
                 totalClientes++;
@@ -207,7 +208,7 @@ public class Arquivo {
         return listaClientes;
     }
 
-    public PessoaFisica buscarPF (String codigo) {
+    public ListaClientes buscarPF (String codigo) {
 
 	    PessoaFisica cliente = null;
 
@@ -227,20 +228,9 @@ public class Arquivo {
                 JSONObject jsonObject = (JSONObject) obj;
                 String cod = (String)  jsonObject.get("codigo");
 
-                if(cod.equals(codigo)) {
-                    String nome = (String) jsonObject.get("nome");
-                    String endereco = (String) jsonObject.get("endereco");
-                    String codg = (String)  jsonObject.get("codigo");
-                    String cpf = (String)  jsonObject.get("cpf");
-                    String ativo = (String)  jsonObject.get("ativo");
-                    double cfdouble = Double.parseDouble((String) jsonObject.get("cf"));
-                    String valor = String.valueOf(cfdouble);
-                    float cf = Float.parseFloat(valor);
-
-                    cliente = new PessoaFisica(codg, nome, endereco, cpf, cf);
-                    cliente.setAtivo(ativo);
-
-                    break;
+                if(linha.contains(codigo)) {
+                    cliente = montarObjeto(linha);
+                    listaClientes.inserir(cliente);
                 }
             }
 
@@ -256,9 +246,46 @@ public class Arquivo {
             fecharManipuladoresEscrita();
         }
 
-	    return cliente;
+	    return listaClientes;
     }
 
+    public PessoaFisica getPessoaFisica (String codigo) {
+
+        PessoaFisica cliente = null;
+
+        JSONParser parser = new JSONParser();
+
+        try {
+            entrada = new FileInputStream ("clientes.json");
+            leitor = new InputStreamReader (entrada);
+            buffer_entrada = new BufferedReader (leitor);
+            String linha;
+
+            while ((linha = buffer_entrada.readLine()) != null) {
+
+                Object obj = parser.parse(linha);
+                JSONObject jsonObject = (JSONObject) obj;
+                String cod = (String)  jsonObject.get("codigo");
+
+                if(cod.equals(codigo)) {
+                    cliente = montarObjeto(linha);
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            fecharManipuladoresEscrita();
+        }
+
+        return cliente;
+    }
 
     private String leftpad(String text, int length) {
         return String.format("%" + length + "." + length + "s", text);
@@ -268,33 +295,42 @@ public class Arquivo {
         return String.format("%-" + length + "." + length + "s", text);
     }
 
-    public void buscaBinaria (String codigo) {
+    public PessoaFisica buscaBinariaCodigo (String codigo) {
         JSONParser parser = new JSONParser();
         PessoaFisica cliente = null;
+        codigo = codigo.substring(0, 7);
         try {
 
             RandomAccessFile arq = new RandomAccessFile ("clientes.json", "r");
+            File file = new File ("clientes.json");
 
-            long tamanho = arq.length();
+            long esq = 0;
+            long dir = arq.length();
+            long meio;
+            int comp = 0;
+            JSONObject jsonObject = null;
 
-            while (tamanho > 1) {
-
-                arq.seek(arq.length()/2);
+            while (esq <= dir) {
+                meio = (dir - esq)/2;
+                arq.seek(meio);
                 String jsonLine = arq.readLine();
-                Object obj = parser.parse(jsonLine);
-                JSONObject jsonObject = (JSONObject) obj;
-                String cod = (String)  jsonObject.get("codigo");
-                int comp = cod.compareTo(codigo);
 
-                if(comp < 0) {
-
-                } else if(comp > 0) {
-                    System.out.println("str1 maior que str2");
-                } else {
-                    montarObjeto(jsonObject);
+                if(jsonLine.length() > 0) {
+                    System.out.println(jsonLine);
+                    Object obj = parser.parse(jsonLine);
+                    jsonObject = (JSONObject) obj;
+                    String cod = (String) jsonObject.get("codigo");
+                    cod = cod.substring(0, 7);
+                    comp = cod.compareTo(codigo);
+                }
+                if(comp > 0)
+                    dir = meio-TAMANHO_BYTE_STRING;
+                else if(comp < 0)
+                    esq = meio+TAMANHO_BYTE_STRING;
+                else {
+                    cliente = montarObjeto(jsonObject);
                     break;
                 }
-
             }
 
         } catch (Exception e) {
@@ -303,6 +339,7 @@ public class Arquivo {
             fecharManipuladoresEscrita();
         }
 
+        return cliente;
     }
 
     public static void fecharManipuladoresEscrita() {
@@ -343,6 +380,34 @@ public class Arquivo {
         return novaString;
     }
 
+    public PessoaFisica montarObjeto (String linha) {
+	    PessoaFisica cliente = null;
+
+	    try {
+            JSONParser parser = new JSONParser();
+            Object obj = parser.parse(linha);
+            JSONObject jsonObject = (JSONObject) obj;
+            String cod = (String) jsonObject.get("codigo");
+            String nome = (String) jsonObject.get("nome");
+            String endereco = (String) jsonObject.get("endereco");
+            String codg = (String) jsonObject.get("codigo");
+            String cpf = (String) jsonObject.get("cpf");
+            String ativo = (String) jsonObject.get("ativo");
+
+            double cfdouble = Double.parseDouble((String) jsonObject.get("cf"));
+            String valor = String.valueOf(cfdouble);
+            float cf = Float.parseFloat(valor);
+
+            cliente = new PessoaFisica(codg.trim(), nome.trim(), endereco.trim(), cpf.trim(), cf);
+            cliente.setAtivo(ativo);
+        } catch (Exception e) {
+            System.err.println("Erro ao montar objeto.");
+            e.printStackTrace();
+        }
+
+        return cliente;
+    }
+
     private boolean delete(File file) {
         boolean success = false;
 
@@ -369,7 +434,7 @@ public class Arquivo {
                 codigo2 = codigo.substring(0, 6);
 
                 if (codigo.compareTo(codigo2) < 0) {
-                    //aqui acontece a troca, do maior cara  vaia para a direita e o menor para a esquerda
+                    //aqui acontece a troca, do maior cara vai para a direita e o menor para a esquerda
                     String aux = linhas[i];
                     linhas[i] = linhas[j];
                     linhas[j] = aux;
@@ -398,6 +463,10 @@ public class Arquivo {
         cliente = new PessoaFisica(codg, nome, endereco, cpf, cf);
         cliente.setAtivo(ativo);
 	    return cliente;
+    }
+
+    public ListaClientes intercalacaoBalanceada () {
+	    
     }
 
     /*File arq1 = new File ("clientes_1.json");
