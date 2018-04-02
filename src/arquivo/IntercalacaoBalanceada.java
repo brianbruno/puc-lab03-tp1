@@ -73,8 +73,8 @@ public class IntercalacaoBalanceada extends ArquivoUtil {
             String linha1 = null, linha2 = null;
 
             int tamanhoArray = TAM_BLOCO*(2*intercalacao);
-            System.out.println("Lendo arquivos: " + indexArquivo1 + " e " + indexArquivo2);
-            System.out.println("Tamanho array: " + tamanhoArray);
+//            System.out.println("Lendo arquivos: " + indexArquivo1 + " e " + indexArquivo2);
+//            System.out.println("Tamanho array: " + tamanhoArray);
 
             FileInputStream entrada1 = new FileInputStream(arquivos[indexArquivo1]);
             FileInputStream entrada2 = new FileInputStream(arquivos[indexArquivo2]);
@@ -132,61 +132,19 @@ public class IntercalacaoBalanceada extends ArquivoUtil {
             delete(arquivos[indexArquivo2]);
 
             if(tamanhoArray < quantidadeLinhas) {
-                System.out.println("Entrou na recursividade. Linhas: " + quantidadeLinhas);
+//                System.out.println("Entrou na recursividade. Linhas: " + quantidadeLinhas);
                 retorno = cruzarArquivos(prox[0], prox[0]+1, intercalacao + 1);
             } else {
                 retorno = prox[0];
                 fecharManipuladoresEscrita();
                 File arqTemp = new File (arquivos[prox[0]]);
+                delete(NOMEARQUIVO_SORT);
                 if(arqTemp.renameTo(new File(NOMEARQUIVO_SORT))){
 //                    System.out.println("Tudo certo com o rename.");
                 } else {
 //                    System.out.println("Nada certo com o rename.");
                 }
             }
-
-//            System.out.println("Proximos arquivos a serem lidos: temp" + (prox[0]+1) + " e temp" + (prox[1]+1));
-
-            /*int index;
-            if(indexArquivo2 == 2)
-                index = 3;
-            else
-                index = 0;
-
-            blocoClientes = new PessoaFisica[TAM_BLOCO*(2*intercalacao)];
-
-            if((intercalacao*TAM_BLOCO) < quantidadeLinhas/2) {
-                while ((linha = buffers[index].readLine()) != null) {
-                    for(int i = 0; i<blocoClientes.length/2; i++) {
-                        if (linha.equals(SEPARADOR_BLOCO_INTERCALACAO)) {
-                            index = proximoIndex(index);
-                        } else {
-                            blocoClientes[i] = montarObjeto(linha);
-                            index = proximoIndex(index);
-                        }
-                    }
-                }
-                int[] indexs = proximoIndex(indexArquivo1, indexArquivo2);
-                index = indexs[0];
-                int k = 0; int j = 0;
-                for (PessoaFisica cliente : blocoClientes) {
-                    if(j == blocoClientes.length/2)
-                        index = indexs[1];
-                    gravarString(montarString(cliente), arquivos[index]);
-                    j++;
-                }
-
-                entrada1.close();
-                entrada2.close();
-                leitor1.close();
-                leitor2.close();
-                buffers[0].close();
-                buffers[1].close();
-
-                *//*delete(arquivos[indexArquivo1]);
-                delete(arquivos[indexArquivo2]);*//*
-                cruzarArquivos(indexs[0], indexs[1], intercalacao+1);
-            }*/
 
         } catch (Exception e) {
             System.err.println("Erro ao intercalar arquivos.");

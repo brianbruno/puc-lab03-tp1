@@ -7,21 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fa88cdd-9b90-486f-b8a1-7e83a6b17875" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/arquivo/ArquivoUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/arquivo/Intercalacao.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/arquivo/IntercalacaoBalanceada.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/clientes.json" afterPath="$PROJECT_DIR$/clientes.json" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/arquivo/Arquivo.class" afterPath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/arquivo/Arquivo.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$1.class" afterPath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$2.class" afterPath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$3.class" afterPath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$3.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$4.class" afterPath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$4.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$5.class" afterPath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$5.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$6.class" afterPath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App$6.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App.class" afterPath="$PROJECT_DIR$/out/production/Trabalho Prático 01 - GUI/com/seuproject/App.class" />
+      <change beforePath="$PROJECT_DIR$/clientes_sorted.json" afterPath="$PROJECT_DIR$/clientes_sorted.json" />
       <change beforePath="$PROJECT_DIR$/src/arquivo/Arquivo.java" afterPath="$PROJECT_DIR$/src/arquivo/Arquivo.java" />
+      <change beforePath="$PROJECT_DIR$/src/arquivo/ArquivoUtil.java" afterPath="$PROJECT_DIR$/src/arquivo/ArquivoUtil.java" />
+      <change beforePath="$PROJECT_DIR$/src/arquivo/IntercalacaoBalanceada.java" afterPath="$PROJECT_DIR$/src/arquivo/IntercalacaoBalanceada.java" />
       <change beforePath="$PROJECT_DIR$/src/com/seuproject/App.java" afterPath="$PROJECT_DIR$/src/com/seuproject/App.java" />
+      <change beforePath="$PROJECT_DIR$/src/estruturas/Cliente.java" afterPath="$PROJECT_DIR$/src/estruturas/Cliente.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,14 +25,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/seuproject/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="54" column="23" lean-forward="true" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
+            <state relative-caret-position="223">
+              <caret line="293" column="35" lean-forward="false" selection-start-line="293" selection-start-column="35" selection-end-line="293" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#10572#10573#0" expanded="true" />
+                <element signature="e#10600#10601#0" expanded="true" />
                 <element signature="method#preencherDados#0;class#App#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Cliente.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/estruturas/Cliente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -49,12 +55,11 @@
       <file leaf-file-name="Arquivo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/arquivo/Arquivo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="107" column="12" lean-forward="false" selection-start-line="107" selection-start-column="12" selection-end-line="107" selection-end-column="59" />
+            <state relative-caret-position="527">
+              <caret line="190" column="35" lean-forward="false" selection-start-line="190" selection-start-column="35" selection-end-line="190" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#atualizarPF#0;class#Arquivo#0" expanded="false" />
-                <element signature="method#buscarPF#0;class#Arquivo#0" expanded="false" />
                 <element signature="method#getPessoaFisica#0;class#Arquivo#0" expanded="false" />
                 <element signature="method#buscaBinariaCodigo#0;class#Arquivo#0" expanded="false" />
                 <element signature="method#ordenarVetor#0;class#Arquivo#0" expanded="false" />
@@ -66,30 +71,40 @@
       <file leaf-file-name="ArquivoUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/arquivo/ArquivoUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="111" column="28" lean-forward="false" selection-start-line="111" selection-start-column="16" selection-end-line="111" selection-end-column="28" />
+            <state relative-caret-position="-1232">
+              <caret line="26" column="46" lean-forward="false" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#968#969#0" expanded="true" />
-                <element signature="e#998#999#0" expanded="true" />
-                <element signature="e#2986#2987#0" expanded="true" />
-                <element signature="e#3063#3064#0" expanded="true" />
-                <element signature="e#3119#3120#0" expanded="true" />
-                <element signature="e#3197#3198#0" expanded="true" />
+                <element signature="e#1023#1024#0" expanded="true" />
+                <element signature="e#1053#1054#0" expanded="true" />
+                <element signature="e#3041#3042#0" expanded="true" />
+                <element signature="e#3118#3119#0" expanded="true" />
+                <element signature="e#3174#3175#0" expanded="true" />
+                <element signature="e#3252#3253#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IntercalacaoBalanceada.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IntercalacaoBalanceada.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/arquivo/IntercalacaoBalanceada.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="144" column="17" lean-forward="true" selection-start-line="144" selection-start-column="17" selection-end-line="144" selection-end-column="17" />
+            <state relative-caret-position="221">
+              <caret line="75" column="45" lean-forward="false" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#gravarString#0;class#IntercalacaoBalanceada#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="clientes.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clientes.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -128,7 +143,6 @@
         <option value="$PROJECT_DIR$/src/lista/NoCliente.java" />
         <option value="$PROJECT_DIR$/src/estruturas/PessoaFisica.java" />
         <option value="$PROJECT_DIR$/clientes_temp.json" />
-        <option value="$PROJECT_DIR$/src/estruturas/Cliente.java" />
         <option value="$PROJECT_DIR$/src/com/seuproject/App.form" />
         <option value="$PROJECT_DIR$/src/com/seuproject/aa.java" />
         <option value="$PROJECT_DIR$/src/lista/ListaClientes.java" />
@@ -136,11 +150,12 @@
         <option value="$PROJECT_DIR$/temp1.json" />
         <option value="$PROJECT_DIR$/temp2.json" />
         <option value="$PROJECT_DIR$/temp3.json" />
+        <option value="$PROJECT_DIR$/src/arquivo/ArquivoUtil.java" />
+        <option value="$PROJECT_DIR$/src/arquivo/IntercalacaoBalanceada.java" />
+        <option value="$PROJECT_DIR$/src/estruturas/Cliente.java" />
         <option value="$PROJECT_DIR$/clientes.json" />
         <option value="$PROJECT_DIR$/src/arquivo/Arquivo.java" />
-        <option value="$PROJECT_DIR$/src/arquivo/ArquivoUtil.java" />
         <option value="$PROJECT_DIR$/src/com/seuproject/App.java" />
-        <option value="$PROJECT_DIR$/src/arquivo/IntercalacaoBalanceada.java" />
       </list>
     </option>
   </component>
@@ -201,13 +216,6 @@
               <item name="puc-lab03-tp1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="seuproject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="puc-lab03-tp1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="puc-lab03-tp1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="seuproject" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="e9f4de52:FormNode" />
             </path>
             <path>
               <item name="puc-lab03-tp1" type="b2602c69:ProjectViewProjectNode" />
@@ -380,12 +388,12 @@
       <workItem from="1522443641875" duration="589000" />
       <workItem from="1522541725112" duration="439000" />
       <workItem from="1522588802357" duration="8082000" />
-      <workItem from="1522608884866" duration="16927000" />
+      <workItem from="1522608884866" duration="18078000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72658000" />
+    <option name="totallyTimeSpent" value="73809000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -443,8 +451,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2713816" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14901665" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -462,13 +470,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/arquivo/Arquivo.java</url>
-          <line>311</line>
+          <line>314</line>
           <properties />
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/arquivo/Arquivo.java</url>
-          <line>304</line>
+          <line>307</line>
           <properties />
           <option name="timeStamp" value="48" />
         </line-breakpoint>
@@ -494,6 +502,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#10572#10573#0" expanded="true" />
+            <element signature="e#10600#10601#0" expanded="true" />
             <element signature="method#preencherDados#0;class#App#0" expanded="false" />
           </folding>
         </state>
@@ -506,7 +516,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#atualizarPF#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#buscarPF#0;class#Arquivo#0" expanded="false" />
             <element signature="method#getPessoaFisica#0;class#Arquivo#0" expanded="false" />
             <element signature="method#buscaBinariaCodigo#0;class#Arquivo#0" expanded="false" />
             <element signature="method#ordenarVetor#0;class#Arquivo#0" expanded="false" />
@@ -563,7 +572,7 @@
         <state relative-caret-position="714">
           <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
           <folding>
-            <element signature="e#1476#1477#0" expanded="false" />
+            <element signature="e#1555#1556#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -574,6 +583,8 @@
           <caret line="72" column="57" lean-forward="false" selection-start-line="72" selection-start-column="57" selection-end-line="72" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#10572#10573#0" expanded="true" />
+            <element signature="e#10600#10601#0" expanded="true" />
             <element signature="method#preencherDados#0;class#App#0" expanded="false" />
           </folding>
         </state>
@@ -586,7 +597,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#atualizarPF#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#buscarPF#0;class#Arquivo#0" expanded="false" />
             <element signature="method#getPessoaFisica#0;class#Arquivo#0" expanded="false" />
             <element signature="method#buscaBinariaCodigo#0;class#Arquivo#0" expanded="false" />
             <element signature="method#ordenarVetor#0;class#Arquivo#0" expanded="false" />
@@ -635,7 +645,7 @@
         <state relative-caret-position="714">
           <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
           <folding>
-            <element signature="e#1476#1477#0" expanded="false" />
+            <element signature="e#1555#1556#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -669,16 +679,6 @@
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/nio/file/Files.java" />
     <entry file="file://$USER_HOME$/OneDrive/Documentos/PUC/Aulas/Semestre 02/Laboratório de Programação/Prática 08/Prática8 P3-E3 EL/Pratica8 P3-E3 - Escrita-Leitura/src/banco/ContaDAO.java" />
     <entry file="file://$PROJECT_DIR$/clientes_temp.json" />
-    <entry file="file://$PROJECT_DIR$/src/estruturas/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="827">
-          <caret line="63" column="41" lean-forward="true" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
-          <folding>
-            <element signature="e#1476#1477#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
@@ -754,21 +754,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/arquivo/Arquivo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="107" column="12" lean-forward="false" selection-start-line="107" selection-start-column="12" selection-end-line="107" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#atualizarPF#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#buscarPF#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#getPessoaFisica#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#buscaBinariaCodigo#0;class#Arquivo#0" expanded="false" />
-            <element signature="method#ordenarVetor#0;class#Arquivo#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/temp4.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -789,14 +774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clientes.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="135" lean-forward="false" selection-start-line="14" selection-start-column="135" selection-end-line="14" selection-end-column="135" />
           <folding />
         </state>
       </provider>
@@ -825,50 +802,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/seuproject/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="54" column="23" lean-forward="true" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#preencherDados#0;class#App#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/arquivo/Intercalacao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
           <caret line="135" column="38" lean-forward="true" selection-start-line="135" selection-start-column="38" selection-end-line="135" selection-end-column="38" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/arquivo/ArquivoUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/estruturas/Cliente.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="111" column="28" lean-forward="false" selection-start-line="111" selection-start-column="16" selection-end-line="111" selection-end-column="28" />
+        <state relative-caret-position="322">
+          <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#968#969#0" expanded="true" />
-            <element signature="e#998#999#0" expanded="true" />
-            <element signature="e#2986#2987#0" expanded="true" />
-            <element signature="e#3063#3064#0" expanded="true" />
-            <element signature="e#3119#3120#0" expanded="true" />
-            <element signature="e#3197#3198#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/arquivo/IntercalacaoBalanceada.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="144" column="17" lean-forward="true" selection-start-line="144" selection-start-column="17" selection-end-line="144" selection-end-column="17" />
+        <state relative-caret-position="221">
+          <caret line="75" column="45" lean-forward="false" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#gravarString#0;class#IntercalacaoBalanceada#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clientes.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arquivo/ArquivoUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1232">
+          <caret line="26" column="46" lean-forward="false" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1023#1024#0" expanded="true" />
+            <element signature="e#1053#1054#0" expanded="true" />
+            <element signature="e#3041#3042#0" expanded="true" />
+            <element signature="e#3118#3119#0" expanded="true" />
+            <element signature="e#3174#3175#0" expanded="true" />
+            <element signature="e#3252#3253#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arquivo/Arquivo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="190" column="35" lean-forward="false" selection-start-line="190" selection-start-column="35" selection-end-line="190" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#atualizarPF#0;class#Arquivo#0" expanded="false" />
+            <element signature="method#getPessoaFisica#0;class#Arquivo#0" expanded="false" />
+            <element signature="method#buscaBinariaCodigo#0;class#Arquivo#0" expanded="false" />
+            <element signature="method#ordenarVetor#0;class#Arquivo#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/seuproject/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="293" column="35" lean-forward="false" selection-start-line="293" selection-start-column="35" selection-end-line="293" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10572#10573#0" expanded="true" />
+            <element signature="e#10600#10601#0" expanded="true" />
+            <element signature="method#preencherDados#0;class#App#0" expanded="false" />
           </folding>
         </state>
       </provider>

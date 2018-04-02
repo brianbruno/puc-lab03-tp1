@@ -182,6 +182,9 @@ public class Arquivo extends ArquivoUtil {
                 PessoaFisica pf = new PessoaFisica(codigo.trim(), nome.trim(), endereco.trim(), cpf.trim(), cf);
                 pf.setAtivo(ativo);
                 listaClientes.inserir(pf);
+
+                ultimoCod = codigo.substring(0, 7);
+
                 totalClientes++;
             }
 

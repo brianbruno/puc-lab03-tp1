@@ -159,7 +159,14 @@ public class App {
                                 JOptionPane.showMessageDialog(null, MSG_ATUALIZADO_SUS);
                             else
                                 JOptionPane.showMessageDialog(null, MSG_ATUALIZADO_ERR);
-                            lista = arquivo.lerPF(false);
+
+                            String textoBusca = txtBuscaClie.getText();
+
+                            if(textoBusca.isEmpty()) {
+                                lista = arquivo.lerPF(false);
+                            } else {
+                                lista = arquivo.buscarPF(codigo);
+                            }
                             popularLista();
                             preencherDados(cliente);
                             listaClientes.setSelectedIndex(index);
@@ -284,6 +291,7 @@ public class App {
         txtEndClie.setText("Endereço: ");
         txtCPFClie.setText("CPF: ");
         txtCapFinClie.setText("Cap. Financeiro: ");
+        txtStatus.setText("Status: ");
         txtTotalClientes.setText("Total de clientes cadastrados: " + Cliente.clientes);
 
 

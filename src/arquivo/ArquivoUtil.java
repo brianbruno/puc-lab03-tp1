@@ -23,7 +23,8 @@ public class ArquivoUtil {
     static final String NOMEARQUIVO_SORT = "clientes_sorted.json";
     static final long TAMANHO_BYTE_STRING = 1;
     static final String SEPARADOR_BLOCO_INTERCALACAO = "- SEPARACAO BLOCO -";
-    static int quantidadeLinhas = 0;
+    public static int quantidadeLinhas = 0;
+    public static String ultimoCod = "0000000";
 
     public ArquivoUtil() {
         contarLinhas();

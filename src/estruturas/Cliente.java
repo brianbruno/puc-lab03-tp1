@@ -1,5 +1,8 @@
 package estruturas;
 
+import arquivo.Arquivo;
+import arquivo.ArquivoUtil;
+
 import java.util.Random;
 
 public abstract class Cliente {
@@ -56,7 +59,7 @@ public abstract class Cliente {
     private String gerarCodigo() {
         Random gerador = new Random();
         Integer aleatorio = 10 + gerador.nextInt(90);
-        String codigoInicial = clientes.toString() + "-" + aleatorio.toString();
+        String codigoInicial = (Integer.parseInt(ArquivoUtil.ultimoCod) + 1) + "-" + aleatorio.toString();
         String codigo = String.format("%10s", codigoInicial).replace(' ', '0');
         return codigo;
     }
