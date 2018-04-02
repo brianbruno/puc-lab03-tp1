@@ -1,6 +1,8 @@
 package com.seuproject;
 
 import arquivo.Arquivo;
+import arquivo.Intercalacao;
+import arquivo.IntercalacaoBalanceada;
 import estruturas.Cliente;
 import estruturas.PessoaFisica;
 import lista.ListaClientes;
@@ -45,9 +47,11 @@ public class App {
 
     public App() {
         Arquivo arquivo = new Arquivo();
+        IntercalacaoBalanceada intercalcao = new IntercalacaoBalanceada();
+        intercalcao.intercalar();
 
         // Lendo os dados do arquivo
-        lista = arquivo.lerPF();
+        lista = arquivo.lerPF(false);
         popularLista();
 
         // Listener do botão de cadastrar
@@ -69,7 +73,8 @@ public class App {
                 txtCPFCliente.setText("");
                 txtCapFinanCliente.setText("");
 
-                lista = arquivo.lerPF();
+                intercalcao.intercalar();
+                lista = arquivo.lerPF(false);
                 popularLista();
 
 
@@ -154,7 +159,7 @@ public class App {
                                 JOptionPane.showMessageDialog(null, MSG_ATUALIZADO_SUS);
                             else
                                 JOptionPane.showMessageDialog(null, MSG_ATUALIZADO_ERR);
-                            lista = arquivo.lerPF();
+                            lista = arquivo.lerPF(false);
                             popularLista();
                             preencherDados(cliente);
                             listaClientes.setSelectedIndex(index);
@@ -184,7 +189,7 @@ public class App {
                             JOptionPane.showMessageDialog(null, "Cliente excluído com sucesso.");
                         else
                             JOptionPane.showMessageDialog(null, "Não foi possível excluir o cliente.");
-                        lista = arquivo.lerPF();
+                        lista = arquivo.lerPF(false);
                         popularLista();
                     }
                 }
@@ -215,6 +220,24 @@ public class App {
                 } else
                     JOptionPane.showMessageDialog(null, MSG_NENHUM_CLIENTE);
 
+            }
+        });
+
+        // Botão de Ordenar Pelo Nome
+        ordenarPorNomeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                lista = arquivo.lerPF(true);
+                popularLista();
+            }
+        });
+
+        // Botão de Ordenar Pelo ID
+        ordenarPorIDButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                lista = arquivo.lerPF(false);
+                popularLista();
             }
         });
     }

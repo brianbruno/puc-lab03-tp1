@@ -21,18 +21,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-public class Arquivo {
-
-    private static File arq = null;
-    private static FileOutputStream saida = null;
-    private static OutputStreamWriter gravador = null;
-    private static BufferedWriter buffer_saida = null;
-    private static FileInputStream entrada = null;
-    private static InputStreamReader leitor = null;
-    private static BufferedReader buffer_entrada = null;
-    private static final String separadorDeLinha = System.getProperty ("line.separator");
-    private static final String NOMEARQUIVO = "clientes.json";
-    private static final long TAMANHO_BYTE_STRING = 1;
+public class Arquivo extends ArquivoUtil {
 
 	public boolean gravarPF (PessoaFisica cliente) {
 	    boolean resultado = false;
@@ -159,20 +148,24 @@ public class Arquivo {
         return resultado;
     }
 
-	public ListaClientes lerPF () {
+	public ListaClientes lerPF (boolean sort) {
         JSONParser parser = new JSONParser();
+
+        String nomeArquivo = NOMEARQUIVO;
+
+        if(sort)
+            nomeArquivo = NOMEARQUIVO_SORT;
 
         ListaClientes listaClientes = new ListaClientes();
         Integer totalClientes = 0;
 
         try {
-            entrada = new FileInputStream ("clientes.json");
+            entrada = new FileInputStream (nomeArquivo);
             leitor = new InputStreamReader (entrada);
             buffer_entrada = new BufferedReader (leitor);
             String linha;
 
-            while ((linha = buffer_entrada.readLine()) != null) {
-
+            while ((linha = buffer_entrada.readLine()) != null && !linha.equals(SEPARADOR_BLOCO_INTERCALACAO)) {
                 Object obj = parser.parse(linha);
 
                 JSONObject jsonObject = (JSONObject) obj;
@@ -287,14 +280,6 @@ public class Arquivo {
         return cliente;
     }
 
-    private String leftpad(String text, int length) {
-        return String.format("%" + length + "." + length + "s", text);
-    }
-
-    private String rightpad(String text, int length) {
-        return String.format("%-" + length + "." + length + "s", text);
-    }
-
     public PessoaFisica buscaBinariaCodigo (String codigo) {
         JSONParser parser = new JSONParser();
         PessoaFisica cliente = null;
@@ -328,7 +313,7 @@ public class Arquivo {
                 else if(comp < 0)
                     esq = meio+TAMANHO_BYTE_STRING;
                 else {
-                    cliente = montarObjeto(jsonObject);
+                    cliente = montarObjeto(jsonLine);
                     break;
                 }
             }
@@ -342,79 +327,6 @@ public class Arquivo {
         return cliente;
     }
 
-    public static void fecharManipuladoresEscrita() {
-        try {
-            if (buffer_saida != null) {
-                buffer_saida.close();
-            }
-            if (buffer_entrada != null) {
-                buffer_entrada.close();
-            }
-            if (gravador != null) {
-                gravador.close();
-            }
-            if (leitor != null) {
-                leitor.close();
-            }
-            if (saida != null) {
-                saida.close();
-            }
-            if (entrada != null) {
-                entrada.close();
-            }
-
-        } catch (IOException e) {
-            System.out.println("ERRO ao fechar os manipuladores de escrita do arquivo");
-        }
-    }
-
-    public String montarString (PessoaFisica cliente) {
-        JSONObject novoDado = new JSONObject();
-        novoDado.put("codigo", rightpad(cliente.getCodigo(), 10));
-        novoDado.put("nome", rightpad(cliente.getNome(), 40));
-        novoDado.put("endereco", rightpad(cliente.getEndereco(), 50));
-        novoDado.put("cpf", leftpad(cliente.getCPF(), 11));
-        novoDado.put("cf", leftpad(String.valueOf(cliente.getCapitalFinanceiro()),10));
-        novoDado.put("ativo", cliente.getAtivo());
-        String novaString = novoDado.toJSONString() + separadorDeLinha;
-        return novaString;
-    }
-
-    public PessoaFisica montarObjeto (String linha) {
-	    PessoaFisica cliente = null;
-
-	    try {
-            JSONParser parser = new JSONParser();
-            Object obj = parser.parse(linha);
-            JSONObject jsonObject = (JSONObject) obj;
-            String cod = (String) jsonObject.get("codigo");
-            String nome = (String) jsonObject.get("nome");
-            String endereco = (String) jsonObject.get("endereco");
-            String codg = (String) jsonObject.get("codigo");
-            String cpf = (String) jsonObject.get("cpf");
-            String ativo = (String) jsonObject.get("ativo");
-
-            double cfdouble = Double.parseDouble((String) jsonObject.get("cf"));
-            String valor = String.valueOf(cfdouble);
-            float cf = Float.parseFloat(valor);
-
-            cliente = new PessoaFisica(codg.trim(), nome.trim(), endereco.trim(), cpf.trim(), cf);
-            cliente.setAtivo(ativo);
-        } catch (Exception e) {
-            System.err.println("Erro ao montar objeto.");
-            e.printStackTrace();
-        }
-
-        return cliente;
-    }
-
-    private boolean delete(File file) {
-        boolean success = false;
-
-        success = file.delete();
-
-        return success;
-    }
 
     private String[] ordenarVetor (String[] linhas) {
 
@@ -446,27 +358,6 @@ public class Arquivo {
         }
 
         return linhas;
-    }
-
-    public PessoaFisica montarObjeto (JSONObject jsonObject) {
-
-	    PessoaFisica cliente = null;
-        String nome = (String) jsonObject.get("nome");
-        String endereco = (String) jsonObject.get("endereco");
-        String codg = (String)  jsonObject.get("codigo");
-        String cpf = (String)  jsonObject.get("cpf");
-        String ativo = (String)  jsonObject.get("ativo");
-        double cfdouble = Double.parseDouble((String) jsonObject.get("cf"));
-        String valor = String.valueOf(cfdouble);
-        float cf = Float.parseFloat(valor);
-
-        cliente = new PessoaFisica(codg, nome, endereco, cpf, cf);
-        cliente.setAtivo(ativo);
-	    return cliente;
-    }
-
-    public ListaClientes intercalacaoBalanceada () {
-	    
     }
 
     /*File arq1 = new File ("clientes_1.json");
