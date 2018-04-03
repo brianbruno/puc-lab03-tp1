@@ -62,7 +62,7 @@ public class Arquivo extends ArquivoUtil {
 
         try {
             File arqTemp = new File ("clientes_temp.json");
-            File arq = new File ("clientes.json");
+            File arq = new File (NOMEARQUIVO);
             saida = new FileOutputStream (arqTemp, true);
             gravador = new OutputStreamWriter (saida);
             buffer_saida = new BufferedWriter (gravador);
@@ -86,7 +86,14 @@ public class Arquivo extends ArquivoUtil {
             }
             fecharManipuladoresEscrita();
 
-            if(delete(arq.getAbsoluteFile())) {
+            /*entrada.close();
+            saida.close();
+            buffer_entrada.close();
+            buffer_saida.close();
+            leitor.close();
+            gravador.close();*/
+
+            if(delete(NOMEARQUIVO)) {
                 if (arqTemp.renameTo(new File(NOMEARQUIVO))) ;
                     resultado = true;
             }
@@ -143,6 +150,8 @@ public class Arquivo extends ArquivoUtil {
             System.err.println ("ERRO ao atualizar o cliente [" + cliente.getCodigo() + "] no disco rígido!");
             resultado = false;
             e.printStackTrace ();
+        } finally {
+            fecharManipuladoresEscrita();
         }
 
         return resultado;
@@ -287,34 +296,39 @@ public class Arquivo extends ArquivoUtil {
         JSONParser parser = new JSONParser();
         PessoaFisica cliente = null;
         codigo = codigo.substring(0, 7);
+        RandomAccessFile arq = null;
         try {
 
-            RandomAccessFile arq = new RandomAccessFile ("clientes.json", "r");
-            File file = new File ("clientes.json");
+            arq = new RandomAccessFile ("clientes.json", "r");
 
             long esq = 0;
-            long dir = arq.length();
-            long meio;
+            long dir = arq.length()/TAMANHO_STRING_BYTES;
+            long meio = 0;
             int comp = 0;
             JSONObject jsonObject = null;
 
             while (esq <= dir) {
-                meio = (dir - esq)/2;
-                arq.seek(meio);
+                meio = esq + (dir - esq)/2;
+                arq.seek(meio*TAMANHO_STRING_BYTES);
                 String jsonLine = arq.readLine();
+                String cod = "";
 
                 if(jsonLine.length() > 0) {
-                    System.out.println(jsonLine);
+//                    System.out.println(jsonLine);
                     Object obj = parser.parse(jsonLine);
                     jsonObject = (JSONObject) obj;
-                    String cod = (String) jsonObject.get("codigo");
+                    cod = (String) jsonObject.get("codigo");
                     cod = cod.substring(0, 7);
-                    comp = cod.compareTo(codigo);
+                    comp = Integer.parseInt(cod);
                 }
-                if(comp > 0)
-                    dir = meio-TAMANHO_BYTE_STRING;
-                else if(comp < 0)
-                    esq = meio+TAMANHO_BYTE_STRING;
+                if(Integer.parseInt(codigo) > Integer.parseInt(cod)) {
+                    esq = meio + 1;
+//                    System.out.println("Nova Dir: " +  dir + " Esquerda: " + esq);
+                }
+                else if(Integer.parseInt(codigo) < Integer.parseInt(cod)) {
+                    dir = meio - 1;
+//                    System.out.println("Nova Esq: " +  esq + " Direita: " + dir);
+                }
                 else {
                     cliente = montarObjeto(jsonLine);
                     break;
@@ -324,6 +338,12 @@ public class Arquivo extends ArquivoUtil {
         } catch (Exception e) {
             e.printStackTrace ();
         } finally {
+            try {
+                if (arq != null)
+                    arq.close();
+            } catch (Exception e) {
+                System.err.println("Erro ao fechar arquivo.");
+            }
             fecharManipuladoresEscrita();
         }
 

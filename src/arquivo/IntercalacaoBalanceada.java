@@ -62,6 +62,8 @@ public class IntercalacaoBalanceada extends ArquivoUtil {
 
         } catch (Exception e) {
             System.err.println("Erro ao intercalar arquivos.");
+        } finally {
+            fecharManipuladoresEscrita();
         }
     }
 
@@ -237,10 +239,5 @@ public class IntercalacaoBalanceada extends ArquivoUtil {
         }
 
         return novoIndex;
-    }
-
-    public boolean delete(String arquivo) {
-        File arqTemp = new File (arquivo);
-        return delete(arqTemp);
     }
 }

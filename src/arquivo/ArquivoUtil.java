@@ -22,6 +22,7 @@ public class ArquivoUtil {
     static final String NOMEARQUIVO = "clientes.json";
     static final String NOMEARQUIVO_SORT = "clientes_sorted.json";
     static final long TAMANHO_BYTE_STRING = 1;
+    static final int TAMANHO_STRING_BYTES = 189;
     static final String SEPARADOR_BLOCO_INTERCALACAO = "- SEPARACAO BLOCO -";
     public static int quantidadeLinhas = 0;
     public static String ultimoCod = "0000000";
@@ -140,5 +141,10 @@ public class ArquivoUtil {
         success = file.delete();
 
         return success;
+    }
+
+    public boolean delete(String arquivo) {
+        File arqTemp = new File (arquivo);
+        return delete(arqTemp);
     }
 }

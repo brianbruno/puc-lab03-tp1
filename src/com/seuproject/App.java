@@ -90,7 +90,7 @@ public class App {
                 String s = (String) listaClientes.getSelectedValue();
                 String codigo = s.substring(0, 10);
                 PessoaFisica cliente = getLista().buscaClienteCodigo(codigo);
-                if(cliente.getCodigo() != null) {
+                if(cliente != null) {
                     preencherDados(cliente);
                 } else
                     JOptionPane.showMessageDialog(null, MSG_CLI_NAO_ENCONT);
@@ -218,8 +218,10 @@ public class App {
                     }
                     if(arquivo.atualizarPF(cliente))
                         JOptionPane.showMessageDialog(null, MSG_ATUALIZADO_SUS);
-                    else
+                    else {
+                        System.out.println("erro");
                         JOptionPane.showMessageDialog(null, MSG_ATUALIZADO_ERR);
+                    }
 
                     popularLista();
                     preencherDados(cliente);

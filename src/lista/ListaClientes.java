@@ -56,7 +56,7 @@ public class ListaClientes {
     public PessoaFisica buscaClienteCodigo (String codigo) {
 
         Arquivo arquivo = new Arquivo();
-        return arquivo.getPessoaFisica(codigo);
+        return arquivo.buscaBinariaCodigo(codigo);
     }
 
     public ListaClientes buscaClienteQualquerCampo (String codigo) {
