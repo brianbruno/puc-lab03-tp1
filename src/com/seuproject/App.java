@@ -58,21 +58,26 @@ public class App {
         cadastrarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                // Pega os dados inseridos no formulário
                 String nome = txtNomeCliente.getText();
                 String endereco = txtEndCliente.getText();
                 String cpf = txtCPFCliente.getText();
                 Float cf = Float.parseFloat(txtCapFinanCliente.getText());
                 PessoaFisica pf = new PessoaFisica(nome, endereco, cpf, cf);
 
+                // Pega a lista e insere na memória e depois no arquivo
                 getLista().inserir(pf);
                 if(arquivo.gravarPF(pf))
                     JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso");
 
+                // Limpa os campos
                 txtNomeCliente.setText("");
                 txtEndCliente.setText("");
                 txtCPFCliente.setText("");
                 txtCapFinanCliente.setText("");
 
+                // Realiza a intercalação e atualiza a lista
                 intercalcao.intercalar();
                 lista = arquivo.lerPF(false);
                 popularLista();
@@ -87,9 +92,13 @@ public class App {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
 
+                // Pega o valor selecionado
                 String s = (String) listaClientes.getSelectedValue();
                 String codigo = s.substring(0, 10);
+                // Realiza a busca pelo método na classe de Lista de Clientes BUSCA BINÁRIA
                 PessoaFisica cliente = getLista().buscaClienteCodigo(codigo);
+
+                // Se encontrar algum cliente preenche a lista.
                 if(cliente != null) {
                     preencherDados(cliente);
                 } else
@@ -101,10 +110,14 @@ public class App {
         btnBuscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                // pega o código digitado
                 String codigo = txtBuscaClie.getText();
 
-                if(codigo != "") {
+                // verifica se está vazio
+                if(!codigo.equals("")) {
 
+                    // realiza a busca
                     NoCliente lista = arquivo.buscarPF(codigo).getLista();
                     if(listaClientes != null) {
                         popularListaComClientes(lista);
@@ -125,13 +138,19 @@ public class App {
         btnEditarCliente.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                // Recupera o cliente selecionado e anota o index para depois continuar selecionado
                 String s = (String) listaClientes.getSelectedValue();
                 int index = listaClientes.getSelectedIndex();
+
+                // Verifica se não está vazia
                 if(s != null) {
 
                     String codigo = s.substring(0, 10);
+                    // Realiza a pesquisa binária
                     PessoaFisica cliente = getLista().buscaClienteCodigo(codigo);
 
+                    // Monta um JOptionPane com as informações para serem editadas
                     JTextField nomeField = new JTextField(25);
                     JTextField endeField = new JTextField(25);
                     JTextField cpfField = new JTextField(25);
@@ -149,6 +168,8 @@ public class App {
 
                     int result = JOptionPane.showConfirmDialog(null, inputFields,
                             "Editar Cliente", JOptionPane.OK_CANCEL_OPTION);
+
+                    // Se ele dá ok salva, se cancelar não faz nada.
                     if (result == JOptionPane.OK_OPTION) {
                         try {
                             cliente.setNome(nomeField.getText());
@@ -167,6 +188,7 @@ public class App {
                             } else {
                                 lista = arquivo.buscarPF(codigo);
                             }
+                            intercalcao.intercalar();
                             popularLista();
                             preencherDados(cliente);
                             listaClientes.setSelectedIndex(index);
@@ -186,16 +208,20 @@ public class App {
                 String s = (String) listaClientes.getSelectedValue();
                 if(s != null) {
                     String codigo = s.substring(0, 10);
+                    // recupera o cliente via pesquisa binária
                     PessoaFisica cliente = getLista().buscaClienteCodigo(codigo);
 
                     int dialogButton = JOptionPane.YES_NO_OPTION;
                     int dialogResult = JOptionPane.showConfirmDialog(null, "Deseja deletar o cliente " + cliente.getNome() + "?", "Atenção", dialogButton);
 
                     if (dialogResult == JOptionPane.YES_OPTION) {
+                        // deleta o cliente caso o usuário confirme a exclusão
                         if(arquivo.deletarPF(cliente))
                             JOptionPane.showMessageDialog(null, "Cliente excluído com sucesso.");
                         else
                             JOptionPane.showMessageDialog(null, "Não foi possível excluir o cliente.");
+
+                        intercalcao.intercalar();
                         lista = arquivo.lerPF(false);
                         popularLista();
                     }
@@ -216,6 +242,7 @@ public class App {
                     } else if (cliente.getAtivo().equals("N")){
                         cliente.setAtivo("S");
                     }
+                    // Marca o cliente como inativo
                     if(arquivo.atualizarPF(cliente))
                         JOptionPane.showMessageDialog(null, MSG_ATUALIZADO_SUS);
                     else {

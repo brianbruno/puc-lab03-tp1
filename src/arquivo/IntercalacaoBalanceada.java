@@ -98,13 +98,13 @@ public class IntercalacaoBalanceada extends ArquivoUtil {
                 blocoClientes = new PessoaFisica[tamanhoArray];
                 int j = 0;
 
-                while (linha1 != null && !linha1.equals(SEPARADOR_BLOCO_INTERCALACAO)) {
+                while (linha1 != null && !linha1.equals(SEPARADOR_BLOCO_INTERCALACAO) && j < tamanhoArray) {
                     blocoClientes[j] = montarObjeto(linha1);
                     j++;
                     linha1 = buffers[0].readLine();
                 }
 
-                while (linha2 != null && !linha2.equals(SEPARADOR_BLOCO_INTERCALACAO)) {
+                while (linha2 != null && !linha2.equals(SEPARADOR_BLOCO_INTERCALACAO)&& j < tamanhoArray) {
                     blocoClientes[j] = montarObjeto(linha2);
                     j++;
                     linha2 = buffers[1].readLine();

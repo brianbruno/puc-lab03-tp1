@@ -192,9 +192,11 @@ public class Arquivo extends ArquivoUtil {
                 pf.setAtivo(ativo);
                 listaClientes.inserir(pf);
 
-                ultimoCod = codigo.substring(0, 7);
 
                 totalClientes++;
+
+                if(!sort)
+                    ultimoCod = codigo.substring(0, 7);
             }
 
             Cliente.clientes = totalClientes;
